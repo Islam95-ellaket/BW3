@@ -1,0 +1,39 @@
+body {
+    background-color: #121212;
+}
+
+.navbar {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.navbar svg {
+    color: white;
+}
+
+
+#icona-home svg {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+#icona-home {
+    border-radius: 50%;
+    background-color: #121212;
+    border: 0px;
+    height: 25px;
+    width: 25px;
+}
+
+.form-control{
+    background-color: #121212;
+color: gainsboro;
+
+}
