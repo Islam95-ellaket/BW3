@@ -1,9 +1,13 @@
 body {
-    background-color: #121212;
+    background-color: #121212; /* il colore di spotify */
 }
 
-.navbar {
+.navbar{
     background-color: black;
+}
+
+.nav-item li {
+    background-color: black; /* parte che contiene il motore di ricerca e i loghi */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,29 +15,64 @@ body {
 }
 
 .navbar svg {
-    color: white;
+    color: white;  /* colore del svg spotify */
+}
+
+.collapse{        /* per centare la home e la barra di ricerca nel mezzo  */
+    display: flex;
+    justify-content: center;
 }
 
 
 #icona-home svg {
 
     display: flex;
-    justify-content: center;
+    justify-content: center;  /* modifica l'icona della casetta */
     align-items: center;
-    color: white;
-
+    color: gainsboro;
+height: 20px;
 }
 
 #icona-home {
     border-radius: 50%;
-    background-color: #121212;
+    background-color: #121212;  /*   modifica il bottone della casetta  */
     border: 0px;
     height: 25px;
     width: 25px;
+    display: flex;  /* per centrare la casetta intorno al cerchio  */
+    justify-content: center;
 }
 
-.form-control{
-    background-color: #121212;
-color: gainsboro;
+.d-flex input {
+    background-color: #121212;    
+}
 
+
+
+.nav-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:gainsboro;
+    flex-direction: row;
+  
+    
+}
+
+
+.end-navbar a{
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+flex-direction: row;
+
+}
+
+
+
+
+.nav-item  button{
+    margin-left: 350px;
+   
 }
