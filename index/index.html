@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./index.css">
     <title>Spotify Clone</title>
 </head>
@@ -14,8 +15,8 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-black">
         <div class="container-fluid d-flex">
-            <a class="navbar-brand  d-flex lign-items-center" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                    fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+            <a class="navbar-brand  d-flex lign-items-center" href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                    width="25" height="25" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
                     <path
                         d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288" />
                 </svg></a>
@@ -28,7 +29,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <button id="icona-home">
-                            <a class="nav-link active" aria-current="page" href="#" >
+                            <a class="nav-link active" aria-current="page" href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-house"
                                     viewBox="0 0 16 16">
                                     <path
@@ -45,15 +46,79 @@
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="cosa vuoi ascoltare? "
                         aria-label="Search" />
-                   
+
                 </form>
             </div>
         </div>
     </nav>
 
+    <div class="appContainer d-flex">
+        <aside class="sidebar d-none d-md-flex d-flex flex-column">
+            <div class="mt-2">
+                <div class="mb-5">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2 class="fw-bold text-light fs-6 ps-2">
+                            La tua libreria
+                        </h2>
+                        <button class="btn rounded-5 pe-4 ps-4 fw-bold" id="createBtn">
+                            <i class="bi bi-plus-lg"></i> Crea
+                        </button>
+                    </div>
+                </div>
+
+                <section class="cardAside rounded-3 mb-4">
+                    <div class="ps-2">
+                        <div>
+                            <h3 class="fw-bold text-light fs-6">Crea la tua prima playlist</h3>
+                            <span class="fw-semibold text-light">È facile, ti aiuteremo</span>
+                        </div>
+                        <button class="btn btn-light text-dark rounded-5 pe-4 ps-3 fw-bold mt-3">Crea playlist</button>
+                    </div>
+                </section>
+
+                <section class="cardAside rounded-3 mb-3">
+                    <div class="ps-2">
+                        <div>
+                            <h3 class="fw-bold text-light fs-6">Cerca qualche podcast da seguire</h3>
+                            <span class="fw-semibold text-light">Ti aggiorneremo sui nuovi episodi</span>
+                        </div>
+                        <button class="btn btn-light text-dark rounded-5 pe-4 ps-3 fw-bold mt-3">Sfoglia i
+                            podcast</button>
+                    </div>
+                </section>
+            </div>
+            <footer class="asideFooter mt-auto pt-3">
+                <div>
+                    <a href="#">Informazioni legali</a>
+                </div>
+                 <div class="mb-2">
+                    <a href="#">Sicurezza e Centro sulla privacy</a>
+                </div>
+                <div class="d-flex flex-wrap gap-3 mb-2">
+                    <a href="#">Informativa sulla privacy</a>
+                    <a href="#">Impostazioni cookie</a>
+                    
+                </div>
+                <div class="d-flex flex-wrap gap-3 mb-2">
+                    <a href="#">Info annunci</a>
+                    <a href="#">Accessibilità</a>
+                </div>
+                <div class="mb-3">
+                    <a href="#" class="fw-bold text-light">Politica sui cookie</a>
+                </div>
+                <button class="btn btn-outline-light rounded-5 fw-bold d-flex align-items-center gap-2">
+                    <i class="bi bi-globe2"></i> Italiano
+                </button>
+            </footer>
+        </aside>
+        <div id="resizer"></div>
+        <main class="mainContent"></main>
+    </div>
+
 
 
     <footer>
+        
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
