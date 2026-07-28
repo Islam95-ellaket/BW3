@@ -88,6 +88,11 @@ footer a {
     color: #AEAEAE;
 }
 
+footer a:hover {
+    text-decoration: none;
+    color:#FFFFFF;
+}
+
 footer span {
     color: #AEAEAE;
 }
