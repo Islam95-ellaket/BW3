@@ -1,26 +1,39 @@
 body {
-  background-color: #000000;
+    background-color: #000000;
     margin: 0;
     height: 100vh;
     overflow: hidden;
 }
 
 .navbar {
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar svg {
-  color: white;
+    color: white;
+    background-color: #121212;
+}
+
+.nav-item li {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.collapse {
+    display: flex;
+    justify-content: center;
 }
 
 #icona-home svg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
 #icona-home {
@@ -130,4 +143,38 @@ body {
     .sidebar {
         display: none;
     }
+}
+
+#icona-home {
+    border-radius: 50%;
+    background-color: #121212;  /*   modifica il bottone della casetta  */
+    border: 0px;
+    height: 25px;
+    width: 25px;
+    display: flex;  /* per centrare la casetta intorno al cerchio  */
+    justify-content: center;
+}
+
+.d-flex input {
+    background-color: #121212;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gainsboro;
+    flex-direction: row;
+}
+
+.end-navbar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+}
+
+.nav-item button {
+    margin-left: 350px;
 }
