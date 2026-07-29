@@ -1,3 +1,4 @@
+
 const rowArtist = document.getElementById('rowArtist')
 
 const API_URL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=artist`
