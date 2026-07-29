@@ -37,3 +37,16 @@ body {
 color: gainsboro;
 
 }
+
+#rowArtist .card {
+    flex: 0 0 auto;
+    width: 120px;
+    min-width: 120px;
+    border: none;
+    text-align: left;
+}
+
+#rowArtist .card-title,
+#rowArtist .card-text {
+    white-space: nowrap;
+}
