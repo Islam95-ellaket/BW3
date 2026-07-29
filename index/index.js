@@ -1,4 +1,4 @@
-const API_URL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=queen`
+const API_URL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=artist`
 
 const getArtist = async () => {
     try {
