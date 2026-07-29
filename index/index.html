@@ -7,68 +7,153 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./index.css">
     <title>Spotify Clone</title>
 </head>
 
 <body>
+    <!-- parte logo spotify -->
     <nav class="navbar navbar-expand-lg bg-body-black">
         <div class="container-fluid d-flex">
-            <a class="navbar-brand  d-flex lign-items-center" href="#"><svg xmlns="http://www.w3.org/2000/svg"
-                    width="25" height="25" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+            <a class="navbar-brand  d-flex lign-items-center" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-spotify"
+                    viewBox="0 0 16 16">
                     <path
                         d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288" />
-                </svg></a>
+                </svg>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- parte logo home -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <button id="icona-home">
-                            <a class="nav-link active" aria-current="page" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-house"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
-                                </svg>
-                            </a>
-                        </button>
-
-                    </li>
+                <li class="nav-item">
+                    <button id="icona-home">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-house"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                            </svg>
+                        </a>
+                    </button>
+                </li>
 
 
 
-                </ul>
+
+                <!-- parte di ricerca -->
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="cosa vuoi ascoltare? "
+                    <input class="form-control me-2" type="search" placeholder="cosa vuoi ascoltare?"
                         aria-label="Search" />
-
                 </form>
+                <div class="end-navbar">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Premio Assistenza Scarica |</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                        </svg>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">installa app</a>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">iscriviti </a>
+                        <button>accedi</button>
+                    </li>
+                </div>
             </div>
         </div>
     </nav>
 
-    <main class="container-fluid">
-        <section class="artist-section ">
-            <div class="d-flex justify-content-between  mb-3">
-                <h5 class="text-white mb-0">Artisti più popolari</h5>
-                <a href="#" class="text-white-50 text-decoration-none small">Mostra tutto</a>
+    <div class="appContainer d-flex">
+        <aside class="sidebar d-none d-md-flex d-flex flex-column">
+            <div class="mt-2">
+                <div class="mb-5">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2 class="fw-bold text-light fs-6 ps-2">
+                            La tua libreria
+                        </h2>
+                        <button class="btn rounded-5 pe-4 ps-4 fw-bold" id="createBtn">
+                            <i class="bi bi-plus-lg"></i> Crea
+                        </button>
+                    </div>
+                </div>
+
+                <section class="cardAside rounded-3 mb-4">
+                    <div class="ps-2">
+                        <div>
+                            <h3 class="fw-bold text-light fs-6">Crea la tua prima playlist</h3>
+                            <span class="fw-semibold text-light">È facile, ti aiuteremo</span>
+                        </div>
+                        <button class="btn btn-light text-dark rounded-5 pe-4 ps-3 fw-bold mt-3">Crea playlist</button>
+                    </div>
+                </section>
+
+                <section class="cardAside rounded-3 mb-3">
+                    <div class="ps-2">
+                        <div>
+                            <h3 class="fw-bold text-light fs-6">Cerca qualche podcast da seguire</h3>
+                            <span class="fw-semibold text-light">Ti aggiorneremo sui nuovi episodi</span>
+                        </div>
+                        <button class="btn btn-light text-dark rounded-5 pe-4 ps-3 fw-bold mt-3">Sfoglia i
+                            podcast</button>
+                    </div>
+                </section>
             </div>
-            <div id="rowArtist" class="d-flex flex-nowrap  gap-2"></div>
-        </section>
+            <footer class="asideFooter mt-auto pt-3">
+                <div>
+                    <a href="#">Informazioni legali</a>
+                </div>
+                <div class="mb-2">
+                    <a href="#">Sicurezza e Centro sulla privacy</a>
+                </div>
+                <div class="d-flex flex-wrap gap-3 mb-2">
+                    <a href="#">Informativa sulla privacy</a>
+                    <a href="#">Impostazioni cookie</a>
+
+                </div>
+                <div class="d-flex flex-wrap gap-3 mb-2">
+                    <a href="#">Info annunci</a>
+                    <a href="#">Accessibilità</a>
+                </div>
+                <div class="mb-3">
+                    <a href="#" class="fw-bold text-light">Politica sui cookie</a>
+                </div>
+                <button class="btn btn-outline-light rounded-5 fw-bold d-flex align-items-center gap-2">
+                    <i class="bi bi-globe2"></i> Italiano
+                </button>
+            </footer>
+        </aside>
+        <div id="resizer"></div>
+        
+        <main class="mainContent">
+            <section class="artist-section ms-5">
+                <div class="d-flex justify-content-between  mb-3">
+                    <h4 class="text-white fw-bold mb-0">Artisti più popolari</h4>
+                    <a href="#" class="text-white-50 text-decoration-none small">Mostra tutto</a>
+                </div>
+                <div id="rowArtist" class="d-flex flex-nowrap row-cols-auto gap-3"></div>
+            </section>
+        </main>
+    </div>
+
 
     </main>
 
     <footer>
+
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="./index.js"></script>
+    <script src="../generic/generic.js"></script>
 </body>
 
 </html>
