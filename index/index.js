@@ -4,7 +4,7 @@ const API_URL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=arti
 
 const getArtist = async () => {
     try {
-        const result = await fetch(`${API_URL}`)
+        const result = await fetch(API_URL)
         const data = await result.json()
         console.log(data)
 
@@ -28,18 +28,14 @@ const createCardArtist = ({ id, name, picture_medium, type }) => {
     cardArtistImage.src = picture_medium
     cardArtistImage.alt = name
 
-
-
     const cardNameArtist = document.createElement('p')
-    cardNameArtist.classList.add( 'text-white', 'my-0', 'small', 'fw-bold')
+    cardNameArtist.classList.add( 'text-white', 'my-0', 'small', 'fw-semibold')
     cardNameArtist.innerText = name
     
-
     const cardText = document.createElement('p')
     cardText.classList.add('card-text', 'text-secondary', 'small')
     cardText.innerText = type
     
-
     cardArtist.append(cardArtistImage, cardNameArtist, cardText)
 
     return cardArtist
