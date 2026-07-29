@@ -183,8 +183,6 @@
         </div>
     </div>
 
-    <main></main>
-
     <div class="appContainer d-flex">
         <aside class="sidebar d-none d-md-flex d-flex flex-column">
             <div class="mt-2">
@@ -245,7 +243,16 @@
             </footer>
         </aside>
         <div id="resizer"></div>
-        <main class="mainContent"></main>
+        
+        <main class="mainContent">
+            <section class="artist-section ms-5">
+                <div class="d-flex justify-content-between  mb-3">
+                    <h4 class="text-white fw-bold mb-0">Artisti più popolari</h4>
+                    <a href="#" class="text-white-50 text-decoration-none small">Mostra tutto</a>
+                </div>
+                <div id="rowArtist" class="d-flex flex-nowrap row-cols-auto gap-3"></div>
+            </section>
+        </main>
     </div>
 
     <!----------------------- inizio banner  ----------------------->
