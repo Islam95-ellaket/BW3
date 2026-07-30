@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,6 +17,7 @@
 </head>
 
 <body>
+    <!----------------------- inizio navbar ----------------------->
     <!-- parte logo spotify -->
     <nav class="navbar navbar-expand-lg bg-body-black">
         <div class="container-fluid d-flex">
@@ -70,7 +74,10 @@
             </div>
         </div>
     </nav>
+    <!----------------------- fine navbar ----------------------->
 
+
+    <!----------------------- inizio aside ----------------------->
     <div class="appContainer d-flex">
         <aside class="sidebar d-none d-md-flex d-flex flex-column">
             <div class="mt-2">
@@ -94,6 +101,7 @@
                         <button class="btn btn-light text-dark rounded-5 pe-4 ps-3 fw-bold mt-3">Crea playlist</button>
                     </div>
                 </section>
+
 
                 <section class="cardAside rounded-3 mb-3">
                     <div class="ps-2">
@@ -132,6 +140,9 @@
         </aside>
         <div id="resizer"></div>
 
+        <!----------------------- fine aside  ----------------------->
+
+        <!----------------------- inizio main  ----------------------->
         <main class="mainContent">
             <section class="artist-section ms-5">
                 <div class="d-flex justify-content-between  mb-3">
@@ -141,25 +152,25 @@
                 <div id="rowArtist" class="d-flex flex-nowrap row-cols-auto gap-3"></div>
             </section>
 
-            <!-- footer -->
-            <div>
+
+            <!----------------------- inizio footer  ----------------------->
+            <div class="container">
                 <hr>
-                <div>
-                    <footer class="container">
-                        <nav>
-                            <div class="container d-flex flex-column flex-lg-row justify-content-between">
+                    <footer>
+                        <nav >
+                            <div class="container d-flex flex-column flex-lg-row justify-content-between mt-6 topSection">
 
                                 <div class="row"> <!-- container dei link -->
-                                    <div class="col-12 col-md-6 col-lg-3">
-                                        <h4>Azienda</h4>
+                                    <div class="col-12 col-md-6 col-lg-3 links">
+                                        <h6>Azienda</h6>
                                         <ul class="list-unstyled">
                                             <li><a href="#">Chi siamo</a></li>
                                             <li><a href="#">Oppurtunità di lavoro</a></li>
                                             <li><a href="#">For the Record</a></li>
                                         </ul>
                                     </div>
-                                    <div class="col-12 col-md-6 col-lg-3">
-                                        <h4>Community</h4>
+                                    <div class="col-12 col-md-6 col-lg-3 links">
+                                        <h6>Community</h6>
                                         <ul class="list-unstyled">
                                             <li><a href="#">Per artisti</a></li>
                                             <li><a href="#">Sviluppatori</a></li>
@@ -168,8 +179,8 @@
                                             <li><a href="#">Venditori</a></li>
                                         </ul>
                                     </div>
-                                    <div class="col-12 col-md-6 col-lg-3">
-                                        <h4>Link utili</h4>
+                                    <div class="col-12 col-md-6 col-lg-3 links">
+                                        <h6>Link utili</h6>
                                         <ul class="list-unstyled">
                                             <li><a href="#">Assistenza</a></li>
                                             <li><a href="#">App per cellulare gratuita</a></li>
@@ -178,8 +189,8 @@
                                             <li><a href="#">Importa la tua musica</a></li>
                                         </ul>
                                     </div>
-                                    <div class="col-12 col-md-6 col-lg-3">
-                                        <h4>Piani Spotify</h4>
+                                    <div class="col-12 col-md-6 col-lg-3 links">
+                                        <h6>Piani Spotify</h6>
                                         <ul class="list-unstyled">
                                             <li><a href="#">Premium Individual</a></li>
                                             <li><a href="#">Premium Duo</a></li>
@@ -226,14 +237,23 @@
                                     </div>
                                 </div>
                             </div>
-                            </section>
-                </div>
+                            <hr>
+                            <div class="container d-flex justify-content-end"> <!-- copyright -->
+                                <div>
+                                    <span>© 2026 Spotify AB</span>
+                                </div>
+
+                            </div>
+                        </nav>
+                    </footer>
             </div>
+            <!----------------------- fine footer  ----------------------->
     </div>
 
     </main>
 
     </div>
+    <!----------------------- fine main  ----------------------->
 
     <!----------------------- inizio banner  ----------------------->
 

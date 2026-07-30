@@ -1,3 +1,12 @@
+/* Applica il font a tutta la pagina */
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #121212; /* Sfondo scuro tipico di Spotify */
+}
+
+
 /*navbar*/
 body {
     background-color: #000000;
@@ -538,11 +547,12 @@ body {
 
 
 /* footer */
+
 hr {
-    border: 0;
+    border: 0;             
     border-top: 1px solid #1F1F1F; 
-    height: 2px;
     opacity: 1; 
+    margin: 24px;
 }
 
 footer a {
@@ -558,9 +568,29 @@ footer a:hover {
 footer span {
     color: #AEAEAE;
 }
-footer h4 {
+
+footer h6 {
     color:#FFFFFF;
+    font-weight: 700;
 }
+
+
+.topSection {
+    margin-top: 4em;
+    padding: 0;
+}
+
+.links {
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+
+
+footer li {
+    margin-bottom: 12px; 
+}
+
 .containerSocial{
 margin-bottom: 40px;
 }
