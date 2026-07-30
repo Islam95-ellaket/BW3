@@ -1,78 +1,66 @@
 body {
-    background-color: #121212; /* il colore di spotify */
+    background-color: #121212;
+    color: #f5f5f5;
+    min-height: 100vh;
+    margin: 0;
 }
 
-.navbar{
-    background-color: black;
+.navbar {
+    background-color: #000;
+    min-height: 60px;
 }
 
-.nav-item li {
-    background-color: black; /* parte che contiene il motore di ricerca e i loghi */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+#spotify2 svg {
+    color: #1db954;
 }
 
-.navbar svg {
-    color: white;  /* colore del svg spotify */
-}
-
-.collapse{        /* per centare la home e la barra di ricerca nel mezzo  */
-    display: flex;
-    justify-content: center;
-}
-
-
-#icona-home svg {
-
-    display: flex;
-    justify-content: center;  /* modifica l'icona della casetta */
-    align-items: center;
-    color: gainsboro;
-height: 20px;
+.navbar-brand {
+    color: #fff;
 }
 
 #icona-home {
     border-radius: 50%;
-    background-color: #121212;  /*   modifica il bottone della casetta  */
-    border: 0px;
-    height: 25px;
-    width: 25px;
-    display: flex;  /* per centrare la casetta intorno al cerchio  */
-    justify-content: center;
-}
-
-.d-flex input {
-    background-color: #121212;    
-}
-
-
-
-.nav-item{
-    display: flex;
+    background-color: #121212;
+    border: 0;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    color:gainsboro;
-    flex-direction: row;
-  
-    
+    padding: 0;
+}
+
+#icona-home svg {
+    width: 18px;
+    height: 18px;
+    color: #e5e5e5;
+}
+
+.search-nav {
+    width: 100%;
+    max-width: 360px;
+}
+
+.search-input {
+    background-color: #121212;
+    border: 1px solid #2a2a2a;
+    color: #f5f5f5;
+}
+
+.search-input::placeholder {
+    color: #b3b3b3;
 }
 
 
-.end-navbar a{
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-flex-direction: row;
 
+
+.end-navbar {
+    gap: 1rem;
 }
 
 
-
-
-.nav-item  button{
-    margin-left: 350px;
-   
+.end-navbar button {
+    border-color: #e5e5e5;
 }
+
+
