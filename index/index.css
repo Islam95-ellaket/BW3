@@ -192,3 +192,150 @@
     display: none !important;
   }
 }
+/* Serena */
+.titleSections {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.titleSections:hover {
+  text-decoration: underline;
+}
+
+.showAll {
+  font-size: small;
+  text-decoration: none;
+  color: #b3b3b3;
+  font-weight: bold;
+  cursor: pointer;
+  text-wrap: none;
+}
+
+.showAll:hover {
+  text-decoration: underline;
+}
+
+.custom-swiper-btn {
+  position: absolute;
+  z-index: 10;
+  background-color: #1f1f1f;
+  color: white;
+  border-radius: 50%;
+  width: 33px;
+  height: 33px;
+  top: 35%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  pointer-events: none;
+}
+
+#albumsSwiperContainer:hover .custom-swiper-btn{
+  border: none;
+  background-color: #1f1f1f;
+  opacity: 1;
+  pointer-events: auto;
+}
+.custom-swiper-btn.is-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+#albumsContainer {
+  scrollbar-width: none;       
+  -ms-overflow-style: none;   
+}
+
+#albumsContainer::-webkit-scrollbar {
+  display: none;              
+}
+.custom-swiper-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+#btn-left {
+  left: 2%;
+}
+
+#btn-right {
+  right: 2%;
+}
+
+.cardAlbum {
+  background-color: transparent;
+  transition: all 0.4s ease-in-out;
+  padding: 12px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.cardAlbum:hover {
+  background-color: #3838384d;
+  cursor: pointer;
+}
+
+.imgAlbum {
+  width: 180px;
+  height: auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.albumTitle {
+  font-size: 14pt;
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  text-wrap: pretty;
+}
+
+.albumTitle:hover {
+  text-decoration: underline;
+}
+
+.albumArtistName {
+  text-decoration: none;
+  color: #b3b3b3;
+  font-size: 11pt;
+  font-weight: 300;
+  line-height: 10pt;
+}
+
+.albumArtistName:hover {
+  text-decoration: underline;
+}
+
+.playButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1ed760;
+  font-size: 35pt;
+  background-color: black;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  position: absolute;
+  top: 140px;
+  left: 130px;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.cardAlbum:hover .playButton {
+  opacity: 1;
+  top: 125px;
+}
+
+.playButton:hover {
+  color: rgb(59, 228, 119);
+}
