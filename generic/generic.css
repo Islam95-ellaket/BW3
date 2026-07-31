@@ -62,9 +62,9 @@ body {
 /* Creo allineamento e struttura dell' Aside */
 
 .appContainer {
-  height: 90vh;
+  height: calc(100vh - 160px);
   gap: 4px;
-  padding: 0 8px 8px 8px;
+  padding: 0 8px 8px;
 }
 
 .sidebar {
