@@ -2,131 +2,100 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Spotify Clone</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+  <header>
+
+    <nav class="nav">
+      <!-- parte sinistra spotify icona -->
+      <div class="parte-sinistra">
+        <a class="nav-link active" aria-current="page" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30"
+            height="30" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+            <path
+              d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288" />
+          </svg></a>
+      </div>
 
 
+      <!-- icone della home insime al bottone -->
 
-
-
-
-
-    <!-- parte logo spotify -->
-    <nav class="navbar navbar-expand-lg bg-body-black">
-        <div class="container-fluid d-flex">
-            <a class="navbar-brand  d-flex lign-items-center" href="#">
-                <div id="spotify2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                        class="bi bi-spotify" viewBox="0 0 16 16">
-                        <path
-                            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288" />
-                    </svg>
-                </div>
+      <div class="home-search">
+        <div class="home">
+          <button id="home-btn">
+            <a class="nav-link" id="casetta" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house"
+                viewBox="0 0 16 16 ">
+                <path
+                  d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+              </svg>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-
-
-
-
-
-
-
-
-
-            <!-- parte logo home -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="nav-item">
-                <li>
-                    <button id="icona-home">
-                        <a class="nav-link active" aria-current="page" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-house"
-                                viewBox="0 0 16 16">
-                                <path
-                                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
-                            </svg>
-                        </a>
-                    </button>
-                </li>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-            <!-- parte di ricerca -->
-            <div class="search-nav">
-                <form class="d-flex" role="search">
-
-                    <input class="form-control me-2" type="search" placeholder="cosa vuoi ascoltare?"
-                        aria-label="Search" />
-                </form>
-                <svg data-encore-id="icon" role="img" aria-hidden="true" class="e-10451-icon" viewBox="0 0 24 24"
-                    style="--encore-icon-height: var(--encore-graphic-size-decorative-base); --encore-icon-width: var(--encore-graphic-size-decorative-base);">
-                    <path d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2"></path>
-                    <path
-                        d="M1.513 9.37A1 1 0 0 1 2.291 9h19.418a1 1 0 0 1 .979 1.208l-2.339 11a1 1 0 0 1-.978.792H4.63a1 1 0 0 1-.978-.792l-2.339-11a1 1 0 0 1 .201-.837zM3.525 11l1.913 9h13.123l1.913-9zM4 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4h-2V3H6v3H4z">
-                    </path>
-                </svg>
-            </div>
-
-
-
-
-            <!-- parte destra -->
-            <div class="end-navbar">
-
-                <li class="nav-item">
-                    <div class="assistenza">
-                        <a class="nav-link active" aria-current="page" href="#">Premio Assistenza Scarica |</a>
-                        
-                    </div>
-                    <div class="parte-destra">
-                <li class="nav-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
-                        </svg>
-                    <a class="nav-link active" aria-current="page" href="#">installa app</a>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">iscriviti </a>
-                </li>
-                <button>accedi</button>
-</div>
-            </div>
+          </button>
         </div>
+
+
+        <!-- parte della ricerca insieme le icone home e upload -->
+        <form class="navigation" role="search">
+          <div class="icona-cerca">
+            <button id="bottone-cerca">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+              </svg>
+            </button>
+          </div>
+
+<!-- la barra di ricerca e icona del upload -->
+          <div id="bottone-input">
+            <input class="form-control me-2" id="input-cerca" type="search" placeholder="Cosa Vuoi Ascoltare?"
+              aria-label="Search" />
+            <div class="icona-upload">
+              <button id="imagy-upload">
+                <img src="open.spotify.com_intl-it__-_Copia-removebg-preview.png" alt="">
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+
+      <!-- parte destra i tre link insieme al bottone  -->
+      <div class="parte-destra">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" id="border-premium" aria-current="page" href="#">Premium Assistenza Scarica </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" id="Installa" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+              </svg>Installa App</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">iscriviti</a>
+          </li>
+          <button>Accedi</button>
+          
+        </ul>
+
+      </div>
     </nav>
 
 
 
-    <footer>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <script src="./index.js"></script>
+  </header>
+  <script src="script.js"></script>
 </body>
 
 </html>
