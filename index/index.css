@@ -13,6 +13,8 @@
     white-space: nowrap;
 }
 
+/* Sezione Brani di Tendenza*/
+
 #trendingSongsContainer {
   display: flex;
   padding-inline: 10px; /* rientro iniziale, allineato al titolo */
