@@ -176,6 +176,33 @@
                 </div>
                 <div id="rowArtist" class="d-flex flex-nowrap row-cols-auto gap-3"></div>
             </section>
+            <section id="albumsContainerSerena" class="text-white text-nowrap my-4 ms-4 me-2">
+                <div class="container ">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-9 col-md-9 col-lg-10"><a class="titleSections">Album e singoli popolari</a></div>
+                        <div class="col-3 col-md-3 col-lg-2"><a class="showAll">Mostra tutto</a></div>
+                    </div>
+                    <div id="albumsSwiperContainer" class="position-relative">
+                        <button id="btn-left" class="scroller-btn btn custom-swiper-btn btn-left"
+                            aria-label="swipe left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-left custom-btn-swipe-svg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                            </svg>
+                        </button>
+                        <button id="btn-right" class="scroller-btn btn btn-right custom-swiper-btn btn-right end-0"
+                            aria-label="swipe right">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-right custom-btn-swipe-svg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                        </button>
+                        <div id="albumsContainer" class="row d-flex flex-nowrap overflow-x-auto"></div>
+                    </div>
+                </div>
+            </section>
 
 
             <!----------------------- inizio footer  ----------------------->
