@@ -1,8 +1,6 @@
-
-
-
+/*---------inizio css section artist Islam------------*/
 /* ---- Contenitore & Scroll ---- */
-.carouselWrapper {
+.carouselWrapperArtist {
     position: relative;
 }
 
@@ -79,7 +77,7 @@
 }
 
 /* ---- Frecce ---- */
-.carouselArrow {
+.carouselArrowArtist {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -98,16 +96,17 @@
     transition: opacity 0.2s ease;
 }
 
-.carouselWrapper:hover .carouselArrow {
+.carouselWrapperArtist:hover .carouselArrowArtist {
     opacity: 1;
 }
 
-.carouselArrow.left { left: -10px; }
-.carouselArrow.right { right: -10px; }
+.carouselArrowArtist.left { left: -10px; }
+.carouselArrowArtist.right { right: -10px; }
 
 @media (max-width: 768px) {
-    .carouselArrow { display: none !important; }
+    .carouselArrowArtist { display: none !important; }
 }
+/*---------fine css section artist Islam------------*/
 
 .nav-item {
     display: flex;
@@ -346,6 +345,254 @@
 }
 
 .social-icon {
+    width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Sezione Brani di Tendenza*/
+
+#trendingSongsContainer {
+  display: flex;
+  padding-inline: 10px; /* rientro iniziale, allineato al titolo */
+}
+
+.trendingSpacer {
+  flex: 0 0 24px;
+}
+
+#trendingWrapper::-webkit-scrollbar {
+  display: none; /* nasconde la scrollbar */
+}
+
+#trendingWrapper {
+  margin-inline: -24px; /*faccio uscire le card dal contenitore allo scorrere del carousel*/
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE */
+}
+
+.trendingSection {
+  margin-top: 15px;
+  padding-inline: 24px;
+}
+
+.trendingSection h2 a {
+ text-decoration: none;
+}
+
+.trendingSection h2 a:hover {
+  text-decoration: underline;
+}
+
+.showAllLink {
+  text-decoration: none; 
+}
+
+.showAllLink:hover {
+  text-decoration: underline; 
+  color: #fff;
+}
+
+.songCardCol {
+  flex: 0 0 195px;
+}
+
+.songTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.artistName {
+  font-size: 0.85rem;
+}
+
+.carouselWrapper {
+  position: relative;
+}
+
+.carouselArrow {
+  position: absolute;
+  top: 72px;
+  transform: translateY(70%);
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #1f1f1f;
+  color: #b8b8b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.carouselWrapper:hover .carouselArrow {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carouselArrow:hover {
+  color: #fff;
+}
+
+.carouselArrow.left {
+  left: 10px;
+}
+
+.carouselArrow.right {
+  right: 10px;
+}
+
+/*card overlay*/
+
+.songCard {
+  padding: 12px;
+  border-radius: 8px;
+  background: transparent;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.songCard:hover {
+  background: #1f1f1f;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.imageWrapper img {
+  display: block;
+  width: 100%;
+}
+
+.playButton {
+  position: absolute;
+  bottom: 25px;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 0;
+  background: #1ed760;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* mostra/nascondi il pulsante e lo sfondo dipende dalla card dove si passa il mouse */
+.songCard:hover .playButton {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* colore e ingrandimento: dipende solo dal pulsante stesso */
+.playButton:hover {
+  background: #3be377;
+  transform: scale(1.1);
+}
+
+@media (max-width: 992px) {
+  .trendingSection {
+    padding-inline: 10px;
+  }
+
+  #trendingWrapper {
+    margin-inline: -10px;
+  }
+
+  #trendingSongsContainer {
+    padding-left: 5px;
+  }
+
+  .trendingSpacer {
+    flex: 0 0 5px;
+  }
+
+  .carouselArrow {
+    display: none !important;
+  }
+}
+/* Serena */
+.titleSections {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.titleSections:hover {
+  text-decoration: underline;
+}
+
+.showAll {
+  font-size: small;
+  text-decoration: none;
+  color: #b3b3b3;
+  font-weight: bold;
+  cursor: pointer;
+  text-wrap: nowrap;
+}
+
+.showAll:hover {
+  text-decoration: underline;
+}
+
+.custom-swiper-btn {
+  position: absolute;
+  z-index: 10;
+  background-color: #1f1f1f;
+  color: white;
+  border-radius: 50%;
+  width: 33px;
+  height: 33px;
+  top: 35%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  pointer-events: none;
+}
+
+#albumsSwiperContainer:hover .custom-swiper-btn{
+  border: none;
+  background-color: #1f1f1f;
+  opacity: 1;
+  pointer-events: auto;
+}
+.custom-swiper-btn.is-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+#albumsContainer {
+  scrollbar-width: none;       
+  -ms-overflow-style: none;   
+}
+
+#albumsContainer::-webkit-scrollbar {
+  display: none;              
+}
+.custom-swiper-btn svg {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
@@ -466,7 +713,6 @@
     gap: 12px;
     padding: 14px 16px;
   }
-}
 
   .banner-actions {
     width: 100%;
@@ -483,3 +729,83 @@
     margin: 16px;
     border-radius: 12px;
   }
+}
+
+#btn-left {
+  left: 2%;
+}
+
+#btn-right {
+  right: 2%;
+}
+
+.cardAlbum {
+  background-color: transparent;
+  transition: all 0.4s ease-in-out;
+  padding: 12px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.cardAlbum:hover {
+  background-color: #3838384d;
+  cursor: pointer;
+}
+
+.imgAlbum {
+  width: 180px;
+  height: auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.albumTitle {
+  font-size: 14pt;
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  text-wrap: pretty;
+}
+
+.albumTitle:hover {
+  text-decoration: underline;
+}
+
+.albumArtistName {
+  text-decoration: none;
+  color: #b3b3b3;
+  font-size: 11pt;
+  font-weight: 300;
+  line-height: 10pt;
+}
+
+.albumArtistName:hover {
+  text-decoration: underline;
+}
+
+.cardAlbum .playButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1ed760;
+  font-size: 35pt;
+  background-color: black;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  position: absolute;
+  top: 140px;
+  left: 130px;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.cardAlbum:hover .playButton {
+  opacity: 1;
+  top: 125px;
+}
+
+.cardAlbum .playButton:hover {
+  color: rgb(59, 228, 119);
+}
