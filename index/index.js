@@ -4,21 +4,28 @@ const leftArrow = document.getElementById('leftArrow')
 const rightArrow = document.getElementById('rightArrow')
 
 
-const API_URL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=artist`
+const API_URL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=`
+
+
+const searchInput = document.getElementById('searchInput')
+const searchForm = document.getElementById('searchForm')
+let database = []
 
 const getArtist = async () => {
     try {
-        const result = await fetch(API_URL)
+        const result = await fetch(`${API_URL}artist`)
         const data = await result.json()
         console.log(data)
 
-        data.data.forEach(({ artist }) => {
+        database = data
+        database.data.forEach(({ artist }) => {
             rowArtist.append(createCardArtist(artist));
         });
     } catch (error) {
         console.log(error)
     }
 }
+
 getArtist()
 
 
@@ -133,3 +140,63 @@ document.addEventListener('DOMContentLoaded', () => {
         signupBanner.classList.add('hidden')
     })
 })
+
+
+
+const searchArtists = () => {
+    // pulisco la ricerca
+    const value = searchInput.value.toLowerCase().trim()
+    // filtro l'array
+    const filteredArtists = database.data.filter(item =>
+        item.artist.name.toLowerCase().includes(value)
+    );
+    // pulisco la row
+    rowArtist.innerHTML = ''
+    // filtro i nuovi risultati
+    filteredArtists.forEach(({ artist }) => {
+        rowArtist.append(createCardArtist(artist))
+    })
+}
+
+// fa nuovo API per singolo artista
+const searchAPIArtists = async (query) => {
+    try {
+        const result = await fetch(`${API_URL}${query}`)
+        const data = await result.json()
+        console.log(data)
+        rowArtist.innerHTML=""
+        rowArtist.append(createCardArtist(data.data[0].artist))
+
+    } catch (error) {
+        console.log(error)
+        rowArtist.innerHTML=""
+        rowArtist.innerHTML="Nessun Artista"
+    }
+}
+
+
+//ricerca a ogni input
+searchInput.addEventListener('submit', (e)=>{
+    e.preventDefault()
+    searchArtists()
+}
+)
+
+//ricerca all'invio
+searchForm.addEventListener('submit', (e)=>{
+    e.preventDefault()
+    //salvo il valore della ricerca
+    const query = searchInput.value.toLowerCase().trim()
+    console.log(query)
+    // controllo la ricerca
+    if (query === '') {
+        //se la query è vuota allora scrivi nessun artista
+         rowArtist.innerHTML=""
+         rowArtist.innerHTML="Nessun Artista"
+         
+    } else {
+        //se la query ha valore esegui la ricerca
+        searchAPIArtists(query)
+    }
+})
+
