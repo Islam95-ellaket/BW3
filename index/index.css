@@ -1,196 +1,4 @@
-
-body{
-    background-color: #121212;
-}
-
-.nav{
-background-color: black;
-display: flex;
-align-items: center;
-justify-content: space-between;
-}
-
-.nav a{
-    color: #B3B3B3;
-}
-
-.parte-destra{
-    flex: 1;
-}
-
-
-.home-search{
-        flex: 1;
-    display: flex;
-    justify-content: end;
-   
-}
-
-
-#home-btn{
-   background-color: black;
-   border: 0;
-   
-   
-}
-
-
-#casetta{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    border: 0;
-    border-radius: 50%;
-    background-color: #121212;
-  width: 50px;
-  height: 50px;
-  margin-top: 3px;
-}
-
-#casetta svg{
-    color: #B3B3B3;
-   
- 
-}
-#Installa{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-
-.nav-link{
-      display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-#border-premium{
-    border-right: 2px solid white;
-    height: 30px;
-
-}
-.parte-destra button{
-border-radius: 50px;
-height: 50px;
-width: 90px;
-}
-
-.navigation input{
-    background-color: transparent  !important;
-    border: 0;
-    height: 40px;
-    outline: none;
-    color: #B3B3B3;
-}
-
-.navigation .form-control:focus{
-    outline: none;
-   background-color: transparent;
-   box-shadow: none;
-   color: #B3B3B3;
-
-}
-
-.form-control::placeholder{
-    color: #B3B3B3; 
-    background-color: #121212;
-    outline: none;
-}
-
-.form-control:hover{
-background-color: #121212 !important;
-outline: none;
-}
-
-.form-control{
-    background-color: #121212;
-}
- 
-.navigation{
-    display: flex;
-    align-items: center;
-   justify-content:center;
-    width: 350px;
-   
-    background-color: #121212;
-    border-radius: 50px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-   
-}
-    
-#input-cerca{
-    width: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-   
-    
-}
-
-
-
-
-.icona-upload img{
- height: 20px;  
- 
-}
-.icona-upload{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
-
-#bottone-input{
-    display:flex;
-    justify-content: center;
-}
-
-#bottone-cerca{
-   background-color: #121212;
-   color:#B3B3B3;
-    border-radius: 50px;
-    border: none;
-}
-
-
-#imagy-upload{
-     background-color: transparent;
-   color:#B3B3B3;
-    padding-left: 12px;
-    padding-right: 20px;
-    border: none;
-    border-left: 1px solid #B3B3B3;
-    
-}
-
-#imagy-upload img:hover{
-   transform: scale(1.3);
-}
-
-#bottone-cerca svg:hover{
-     transform: scale(1.3);
-}
-
-.icona-cerca{
-   display: flex;
-   padding-left: 10px;
-}
- 
-
-
-
-
-
-
-
-
-
-
+/* per i telefoni orizontali-tablet*/
 
 @media only screen and (min-width: 320px) and (max-width: 768px) and (orientation: landscape) {
     body {
@@ -208,10 +16,1088 @@ outline: none;
         color: #B3B3B3;
     }
 
+    #chiusura-menu {
+        display: none;
+        color: white;
+    }
+
+    #icona-menu {
+        display: block;
+        color: white;
+    }
+
     .parte-destra {
         flex: 1;
     }
 
+
+
+    main {
+        position: relative;
+    }
+
+    #sfondo-accesso {
+        position: absolute;
+        background-color: #121212;
+        color: white;
+        box-shadow: 0 0 2px white;
+        right: 0px;
+        height: 200px;
+        width: 200px;
+        display: none;
+
+    }
+
+    #sfondo-accesso ul {
+        list-style-type: none;
+        line-height: 2;
+    }
+
+    #sfondo-accesso a {
+        color: white;
+    }
+
+    #sfondo-accesso button a {
+        color: blue;
+    }
+
+    #sfondo-accesso button {
+        background-color: white;
+    }
+
+    #sfondo-accesso.apri {
+        transition: max-width 0.3s ease;
+        display: block;
+    }
+
+    #menu {
+        display: block;
+        background-color: black;
+        color: white;
+        border: none;
+    }
+
+    .home-search {
+
+        display: flex;
+        justify-content: space-between;
+
+
+    }
+
+    #spotify {
+        gap: 5px;
+    }
+
+    #home-btn {
+        background-color: black;
+        border: 0;
+
+
+    }
+
+
+    #casetta {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        border: 0;
+        border-radius: 50%;
+        background-color: #121212;
+        width: 50px;
+        height: 50px;
+        margin-top: 3px;
+    }
+
+    #casetta svg {
+        color: #B3B3B3;
+
+
+    }
+
+    #Installa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+
+
+    .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    #border-premium {
+        border-right: 2px solid white;
+        height: 30px;
+
+    }
+
+    .parte-destra button {
+        border-radius: 50px;
+        height: 50px;
+        width: 90px;
+    }
+
+    .parte-destra {
+        display: none;
+    }
+
+    .navigation input {
+        background-color: transparent !important;
+        border: 0;
+        height: 40px;
+        outline: none;
+        color: #B3B3B3;
+    }
+
+    .navigation .form-control:focus {
+        outline: none;
+        background-color: transparent;
+        box-shadow: none;
+        color: #B3B3B3;
+
+    }
+
+    .form-control::placeholder {
+        color: #B3B3B3;
+        background-color: #121212;
+        outline: none;
+    }
+
+    .form-control:hover {
+        background-color: #121212 !important;
+        outline: none;
+    }
+
+    .form-control {
+        background-color: #121212;
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 300px;
+
+        background-color: #121212;
+        border-radius: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+    }
+
+
+
+
+
+    .icona-upload img {
+        height: 20px;
+
+    }
+
+
+    #bottone-cerca {
+        background-color: #121212;
+        color: #B3B3B3;
+        border-radius: 50px;
+        border: none;
+    }
+
+    #bottone-input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    #imagy-upload {
+        background-color: transparent;
+        color: #B3B3B3;
+        padding-left: 12px;
+        padding-right: 20px;
+        border: none;
+        border-left: 1px solid #B3B3B3;
+
+    }
+
+    #imagy-upload img:hover {
+        transform: scale(1.3);
+    }
+
+    #bottone-cerca svg:hover {
+        transform: scale(1.3);
+    }
+
+    .icona-cerca {
+        display: flex;
+        padding-left: 10px;
+    }
+
+}
+
+/* telefoni verticali */
+@media only screen and (min-width: 320px) and (max-width: 768px) and (orientation: portrait) {
+
+
+    body {
+        background-color: #121212;
+
+        overflow: hidden;
+
+    }
+
+    #chiusura-menu {
+        display: none;
+    }
+
+    .nav {
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        overflow: hidden;
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+
+    .nav a {
+        color: white;
+
+
+    }
+
+    .parte-destra {
+        flex: 1;
+        display: none;
+    }
+
+
+    main {
+        position: relative;
+    }
+
+    #sfondo-accesso {
+        position: absolute;
+        background-color: #121212;
+        color: white;
+        box-shadow: 0 0 2px white;
+        right: 0px;
+        height: 200px;
+        width: 200px;
+        display: none;
+
+    }
+
+    #sfondo-accesso ul {
+        list-style-type: none;
+        line-height: 2;
+    }
+
+    #sfondo-accesso a {
+        color: white;
+    }
+
+    #sfondo-accesso button a {
+        color: blue;
+    }
+
+    #sfondo-accesso button {
+        background-color: white;
+    }
+
+    #sfondo-accesso.apri {
+        transition: max-width 0.3s ease;
+        display: block;
+    }
+
+
+
+    #spotify {
+        padding: 0;
+        gap: 5px;
+    }
+
+    .home-search {
+
+        display: flex;
+        justify-content: start;
+
+
+    }
+
+
+    #home-btn {
+        background-color: black;
+        border: 0;
+        display: none;
+
+    }
+
+
+    #casetta {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        border: 0;
+        border-radius: 50%;
+        background-color: #121212;
+        width: 50px;
+        height: 50px;
+        margin-top: 3px;
+    }
+
+    #casetta svg {
+        color: #B3B3B3;
+
+
+    }
+
+    #Installa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #menu {
+        border: none;
+        background-color: black;
+        color: #B3B3B3;
+    }
+
+
+    #border-premium {
+        border-right: 2px solid white;
+        height: 30px;
+
+    }
+
+    .parte-destra button {
+        border-radius: 50px;
+        height: 50px;
+        width: 90px;
+    }
+
+    .parte-destra {
+        display: none;
+    }
+
+    .navigation input {
+        background-color: transparent !important;
+        border: 0;
+        height: 40px;
+        outline: none;
+        color: #B3B3B3;
+    }
+
+    .navigation .form-control:focus {
+        outline: none;
+        background-color: transparent;
+        box-shadow: none;
+        color: #B3B3B3;
+
+    }
+
+    .form-control::placeholder {
+        color: #B3B3B3;
+        background-color: #121212;
+        outline: none;
+    }
+
+
+
+    #bottone-input {
+        max-width: 550px;
+        opacity: 1;
+        overflow: hidden;
+        display: flex;
+        justify-content: start;
+        transition: max-width 0.4s ease, opacity 0.25s ease;
+
+
+
+    }
+
+    #input-cerca {
+        padding-left: 0;
+        font-size: 11px;
+    }
+
+    #bottone-input.apri {
+        opacity: 1;
+        max-width: 250px;
+        background-color: transparent;
+
+    }
+
+
+
+    .navigation.chiudi {
+        width: 50px;
+        background-color: transparent;
+
+    }
+
+
+    #bottone-cerca {
+        background-color: #121212;
+        color: #B3B3B3;
+        border-radius: 50px;
+        border: 1px solid rgba(179, 179, 179, 0.1);
+        transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease, opacity 0.35s ease;
+        box-shadow: none;
+        opacity: 0.7;
+        margin-right: 20px;
+    }
+
+    .navigation.chiudi #bottone-cerca {
+
+
+        transform: scale(1.02);
+        opacity: 1;
+    }
+
+    .form-control:hover {
+        background-color: #121212 !important;
+        outline: none;
+    }
+
+    .form-control {
+        background-color: #121212;
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 175px;
+        box-shadow: 0 0 15px rgba(69, 243, 255, 0.6);
+        background-color: #121212;
+        border-radius: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        transition: width 0.35s ease, background-color 0.35s ease, border 0.35s ease, box-shadow 0.35s ease;
+
+
+    }
+
+
+
+
+
+    .icona-upload img {
+        height: 20px;
+        display: none;
+    }
+
+
+    #bottone-cerca {
+        background-color: #121212;
+        color: #B3B3B3;
+        border-radius: 50px;
+        border: none;
+        width: fit-content;
+        margin: 0;
+    }
+
+
+    #imagy-upload {
+        background-color: transparent;
+        color: #B3B3B3;
+        padding-left: 12px;
+        padding-right: 20px;
+        border: none;
+        border-left: 1px solid #B3B3B3;
+        display: none;
+    }
+
+    #imagy-upload img:hover {
+        transform: scale(1.3);
+    }
+
+    #bottone-cerca svg:hover {
+        transform: scale(1.3);
+    }
+
+    .icona-cerca {
+        display: flex;
+        padding-left: 10px;
+        width: fit-content;
+    }
+
+
+}
+
+
+
+/* per i tablet */
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+    body {
+        background-color: #121212;
+    }
+
+    #chiusura-menu {
+        display: none;
+        color: white;
+    }
+
+    #icona-menu {
+        display: block;
+        color: white;
+    }
+
+    .nav {
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+    }
+
+    .nav a {
+        color: #B3B3B3;
+    }
+
+    #chiusura-menu {
+        display: none;
+        color: white;
+    }
+
+    #icona-menu {
+        display: block;
+        color: white;
+    }
+
+    #spotify {
+        padding: 0px;
+        gap: 5px;
+
+    }
+
+    .parte-destra {
+
+        display: flex;
+
+
+    }
+
+    .nav-partedestra {
+        display: none;
+    }
+
+    .home-search {
+
+        display: flex;
+        justify-content: center;
+
+    }
+
+    #menu {
+        border: none;
+        background-color: black;
+        color: #B3B3B3;
+
+    }
+
+    main {
+        position: relative;
+    }
+
+    #sfondo-accesso {
+        position: absolute;
+        background-color: #121212;
+        color: white;
+        box-shadow: 0 0 2px white;
+        right: 0px;
+        height: 200px;
+        width: 200px;
+        display: none;
+
+    }
+
+    #sfondo-accesso ul {
+        list-style-type: none;
+        line-height: 2;
+    }
+
+    #sfondo-accesso a {
+        color: white;
+    }
+
+    #sfondo-accesso button a {
+        color: blue;
+    }
+
+    #sfondo-accesso button {
+        background-color: white;
+    }
+
+    #sfondo-accesso.apri {
+        transition: max-width 0.3s ease;
+        display: block;
+    }
+
+
+    #home-btn {
+        background-color: black;
+        border: 0;
+
+
+    }
+
+
+    #casetta {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        border: 0;
+        border-radius: 50%;
+        background-color: #121212;
+        width: 50px;
+        height: 50px;
+        margin-top: 3px;
+    }
+
+    #casetta svg {
+        color: #B3B3B3;
+
+
+    }
+
+    #Installa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    .nav-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: fit-content;
+        font-size: 11px;
+    }
+
+
+    #border-premium {
+        border-right: 2px solid white;
+        height: 30px;
+
+    }
+
+    .parte-destra button {
+        border-radius: 50px;
+        height: 50px;
+        width: 90px;
+    }
+
+    .navigation input {
+        background-color: transparent !important;
+        border: 0;
+        height: 40px;
+        outline: none;
+        color: #B3B3B3;
+    }
+
+    .navigation .form-control:focus {
+        outline: none;
+        background-color: transparent;
+        box-shadow: none;
+        color: #B3B3B3;
+
+    }
+
+    .form-control::placeholder {
+        color: #B3B3B3;
+        background-color: #121212;
+        outline: none;
+    }
+
+    .form-control:hover {
+        background-color: #121212 !important;
+        outline: none;
+    }
+
+    .form-control {
+        background-color: #121212;
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 350px;
+
+        background-color: #121212;
+        border-radius: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+    }
+
+    #input-cerca {
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+
+
+    }
+
+
+
+
+    .icona-upload img {
+        height: 20px;
+
+    }
+
+    .icona-upload {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    #bottone-input {
+        display: flex;
+        justify-content: center;
+    }
+
+    #bottone-cerca {
+        background-color: #121212;
+        color: #B3B3B3;
+        border-radius: 50px;
+        border: none;
+    }
+
+
+    #imagy-upload {
+        background-color: transparent;
+        color: #B3B3B3;
+        padding-left: 12px;
+        padding-right: 20px;
+        border: none;
+        border-left: 1px solid #B3B3B3;
+
+    }
+
+    #imagy-upload img:hover {
+        transform: scale(1.3);
+    }
+
+    #bottone-cerca svg:hover {
+        transform: scale(1.3);
+    }
+
+    .icona-cerca {
+        display: flex;
+        padding-left: 10px;
+    }
+
+
+
+}
+
+
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+
+    body {
+        background-color: #121212;
+    }
+
+    #chiusura-menu {
+        display: none;
+        color: white;
+    }
+
+    #icona-menu {
+        display: block;
+        color: white;
+    }
+
+    .nav {
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav a {
+        color: #B3B3B3;
+    }
+
+    .parte-destra {
+        flex: 1;
+        display: flex;
+        justify-content: end;
+    }
+
+    .nav-partedestra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: fit-content;
+    }
+
+    #sfondo-accesso {
+        display: none;
+    }
+
+    #spotify {
+
+        gap: 5px;
+
+    }
+
+    .home-search {
+        flex: 1;
+        display: flex;
+        justify-content: end;
+
+    }
+
+
+    #home-btn {
+        background-color: black;
+        border: 0;
+
+
+    }
+
+
+    #casetta {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        border: 0;
+        border-radius: 50%;
+        background-color: #121212;
+        width: 50px;
+        height: 50px;
+        margin-top: 3px;
+    }
+
+    #casetta svg {
+        color: #B3B3B3;
+
+
+    }
+
+    #Installa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        font-size: 11px;
+    }
+
+
+    #border-premium {
+        border-right: 2px solid white;
+        height: 30px;
+
+    }
+
+    #menu {
+        display: none;
+
+    }
+
+    .parte-destra button {
+        border-radius: 50px;
+        height: 50px;
+        width: 90px;
+    }
+
+    .navigation input {
+        background-color: transparent !important;
+        border: 0;
+        height: 40px;
+        outline: none;
+        color: #B3B3B3;
+    }
+
+    .navigation .form-control:focus {
+        outline: none;
+        background-color: transparent;
+        box-shadow: none;
+        color: #B3B3B3;
+
+    }
+
+    .form-control::placeholder {
+        color: #B3B3B3;
+        background-color: #121212;
+        outline: none;
+    }
+
+    .form-control:hover {
+        background-color: #121212 !important;
+        outline: none;
+    }
+
+    .form-control {
+        background-color: #121212;
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 350px;
+
+        background-color: #121212;
+        border-radius: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+    }
+
+    #input-cerca {
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+
+
+    }
+
+
+
+
+    .icona-upload img {
+        height: 20px;
+
+    }
+
+    .icona-upload {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    #bottone-input {
+        display: flex;
+        justify-content: center;
+    }
+
+    #bottone-cerca {
+        background-color: #121212;
+        color: #B3B3B3;
+        border-radius: 50px;
+        border: none;
+    }
+
+
+    #imagy-upload {
+        background-color: transparent;
+        color: #B3B3B3;
+        padding-left: 12px;
+        padding-right: 20px;
+        border: none;
+        border-left: 1px solid #B3B3B3;
+
+    }
+
+    #imagy-upload img:hover {
+        transform: scale(1.3);
+    }
+
+    #bottone-cerca svg:hover {
+        transform: scale(1.3);
+    }
+
+    .icona-cerca {
+        display: flex;
+        padding-left: 10px;
+    }
+
+
+
+}
+
+
+
+
+
+
+/* per computer grandi schermi */
+@media only screen and (min-width: 1441px) {
+
+    body {
+        background-color: #121212;
+    }
+
+    #chiusura-menu {
+        display: none;
+        color: white;
+    }
+
+    #icona-menu {
+        display: block;
+        color: white;
+    }
+
+    .nav {
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav a {
+        color: #B3B3B3;
+    }
+
+    .parte-destra {
+        flex: 1;
+        display: flex;
+        justify-content: end;
+    }
+
+    .nav-partedestra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: fit-content;
+        padding-top: 10px;
+    }
+
+    #sfondo-accesso {
+        display: none;
+    }
 
     .home-search {
         flex: 1;
@@ -268,14 +1154,17 @@ outline: none;
 
     }
 
+
+    #menu {
+        display: none;
+
+    }
+
+
     .parte-destra button {
         border-radius: 50px;
         height: 50px;
         width: 90px;
-    }
-
-    .parte-destra {
-        display: none;
     }
 
     .navigation input {
@@ -312,7 +1201,7 @@ outline: none;
     .navigation {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         width: 350px;
 
         background-color: #121212;
@@ -322,6 +1211,15 @@ outline: none;
 
     }
 
+    #input-cerca {
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+
+
+    }
 
 
 
@@ -331,261 +1229,22 @@ outline: none;
 
     }
 
-
-    #bottone-cerca {
-        background-color: #121212;
-        color: #B3B3B3;
-        border-radius: 50px;
-        border: none;
-    }
-
-
-    #imagy-upload {
-        background-color: transparent;
-        color: #B3B3B3;
-        padding-left: 12px;
-        padding-right: 20px;
-        border: none;
-        border-left: 1px solid #B3B3B3;
-
-    }
-
-    #imagy-upload img:hover {
-        transform: scale(1.3);
-    }
-
-    #bottone-cerca svg:hover {
-        transform: scale(1.3);
-    }
-
-    .icona-cerca {
+    .icona-upload {
         display: flex;
-        padding-left: 10px;
-    }
-
-
-}
-
-
-
-
-
-@media only screen and (min-width: 300px) and (max-width: 800px) and (orientation: portrait) {
-
-
-    body {
-        background-color: #121212;
-       
-        overflow: hidden;
-        
-    }
-
-    .nav {
-        background-color: black;
-        display: flex;
-        justify-content:space-between;
-        align-items: center;
-        width: 100%;
-        overflow: hidden;
-    padding-left: 10px;
-    padding-top: 5px;
-    }
-
-    .nav a {
-        color: white;
-      
-       
-    }
-
-    .parte-destra {
-        flex: 1;
-          display: none;
-    }
-#spotify{
-    padding: 0;
-    gap: 5px;
-}
-
-    .home-search {
-        
-        display: flex;
-        justify-content: start;
-
-    }
-
-
-    #home-btn {
-        background-color: black;
-        border: 0;
-
-
-    }
-
-
-    #casetta {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        border: 0;
-        border-radius: 50%;
-        background-color: #121212;
-        width: 50px;
-        height: 50px;
-        margin-top: 3px;
-    }
-
-    #casetta svg {
-        color: #B3B3B3;
-
-
-    }
-
-    #Installa {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-    }
-
-
-    .nav-link {
-        display: flex;
-        justify-content: center;
+        justify-content: end;
         align-items: center;
     }
-
-
-    #border-premium {
-        border-right: 2px solid white;
-        height: 30px;
-
-    }
-
-    .parte-destra button {
-        border-radius: 50px;
-        height: 50px;
-        width: 90px;
-    }
-
-    .parte-destra {
-        display: none;
-    }
-
-    .navigation input {
-        background-color: transparent !important;
-        border: 0;
-        height: 40px;
-        outline: none;
-        color: #B3B3B3;
-    }
-
-    .navigation .form-control:focus {
-        outline: none;
-        background-color: transparent;
-        box-shadow: none;
-        color: #B3B3B3;
-
-    }
-
-    .form-control::placeholder {
-        color: #B3B3B3;
-        background-color: #121212;
-        outline: none;
-    }
-
-
 
     #bottone-input {
-        max-width: 550px;
-        opacity: 1;
-        overflow: hidden;
         display: flex;
-        justify-content: start;
-        transition: max-width 0.4s ease, opacity  0.25s ease;
-      
-       
-    
+        justify-content: center;
     }
-    #input-cerca{
-         padding-left:0;
-    }
-
-    #bottone-input.apri {
-        opacity: 1;
-        max-width: 250px;
-        background-color: transparent;
-        
-    }
-
-   
-
-    .navigation.chiudi {
-        width: 50px;
-        background-color: transparent;
-      
-    }
-  
-
-    #bottone-cerca {
-        background-color: #121212;
-        color: #B3B3B3;
-        border-radius: 50px;
-        border: 1px solid rgba(179, 179, 179, 0.1);
-        transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease, opacity 0.35s ease;
-        box-shadow: none;
-        opacity: 0.7;
-        margin-right: 20px;
-    }
-
-    .navigation.chiudi #bottone-cerca {
-       
-       
-        transform: scale(1.02);
-        opacity: 1;
-    }
-
-    .form-control:hover {
-        background-color: #121212 !important;
-        outline: none;
-    }
-
-    .form-control {
-        background-color: #121212;
-    }
-
-    .navigation {
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        width: 218px;
- box-shadow: 0 0 15px rgba(69, 243, 255, 0.6);
-        background-color: #121212;
-        border-radius: 50px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-       gap: 12px;
-        transition: width 0.35s ease, background-color 0.35s ease, border 0.35s ease, box-shadow 0.35s ease;
-    
-
-    }
-
-
-
-
-
-    .icona-upload img {
-        height: 20px;
-   
-    }
-
 
     #bottone-cerca {
         background-color: #121212;
         color: #B3B3B3;
         border-radius: 50px;
         border: none;
-        width: fit-content;
-        margin: 0;
     }
 
 
@@ -610,7 +1269,6 @@ outline: none;
     .icona-cerca {
         display: flex;
         padding-left: 10px;
-        width: fit-content;
     }
 
 
