@@ -20,7 +20,7 @@
 
 /* ---- Card e Hover Artist ---- */
 #rowArtist .card {
-    flex: 0 0 calc(50% - 16px);
+    flex: 0 0 175px;
     max-width: 175px;
     padding: 12px;
     border: none;
@@ -995,14 +995,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
         width: 300px;
-
         background-color: #121212;
         border-radius: 50px;
         margin-top: 5px;
         margin-bottom: 5px;
-
     }
 
 
@@ -2084,4 +2081,187 @@
     }
 
 
+}
+
+/* Sezione Brani di Tendenza*/
+
+.cardsContainer {
+  display: flex;
+  padding-inline: 10px; /* rientro iniziale, allineato al titolo */
+}
+
+.carouselSpacer{
+  flex: 0 0 24px;
+}
+
+.carouselContent::-webkit-scrollbar {
+  display: none; /* nasconde la scrollbar */
+}
+
+.carouselContent {
+  margin-inline: -24px; /*faccio uscire le card dal contenitore allo scorrere del carousel*/
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE */
+}
+
+.trendingSection,
+.radioSection {
+  margin-top: 15px;
+  padding-inline: 24px;
+}
+
+.trendingSection h2 a,
+.radioSection h2 a {
+  text-decoration: none;
+}
+
+.trendingSection h2 a:hover,
+.radioSection h2 a:hover {
+  text-decoration: underline;
+}
+
+.showAllLink {
+  text-decoration: none; 
+}
+
+.showAllLink:hover {
+  text-decoration: underline; 
+  color: #fff;
+}
+
+.songCardCol {
+  flex: 0 0 195px;
+}
+
+.songTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.artistName {
+  font-size: 0.85rem;
+}
+
+.carouselWrapper {
+  position: relative;
+}
+
+.carouselArrow {
+  position: absolute;
+  top: 72px;
+  transform: translateY(70%);
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #1f1f1f;
+  color: #b8b8b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.carouselWrapper:hover .carouselArrow {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carouselArrow:hover {
+  color: #fff;
+}
+
+.carouselArrow.left {
+  left: 10px;
+}
+
+.carouselArrow.right {
+  right: 10px;
+}
+
+/*card overlay*/
+
+.songCard {
+  padding: 12px;
+  border-radius: 8px;
+  background: transparent;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.songCard:hover {
+  background: #1f1f1f;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.imageWrapper img {
+  display: block;
+  width: 100%;
+}
+
+.playButton {
+  position: absolute;
+  bottom: 25px;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 0;
+  background: #1ed760;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* mostra/nascondi il pulsante e lo sfondo dipende dalla card dove si passa il mouse */
+.songCard:hover .playButton {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* colore e ingrandimento: dipende solo dal pulsante stesso */
+.playButton:hover {
+  background: #3be377;
+  transform: scale(1.1);
+}
+
+@media (max-width: 992px) {
+  .trendingSection {
+    padding-inline: 10px;
+  }
+
+  .cardsContainer {
+    margin-inline: -10px;
+  }
+
+  .cardsContainer {
+    padding-left: 5px;
+  }
+
+  .carouselSpacer {
+    flex: 0 0 5px;
+  }
+
+  .carouselArrow {
+    display: none !important;
+  }
 }

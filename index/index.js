@@ -3,9 +3,7 @@ const artistWrapper = document.getElementById('artistWrapper')
 const leftArrowArtist = document.getElementById('leftArrowArtist')
 const rightArrowArtist = document.getElementById('rightArrowArtist')
 
-
 const API_URL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=`
-
 
 const searchInput = document.getElementById('searchInput')
 const searchForm = document.getElementById('searchForm')
@@ -89,131 +87,12 @@ leftArrowArtist.addEventListener("click", () =>
     artistWrapper.scrollBy({ left: -SCROLL_DISTANCE, behavior: "smooth" })
 )
 
-// -------- js modale --------
+// --------js brani di tendenza e radio--------
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    const signupBanner = document.getElementById('signupBanner')
-    const closeBannerBtn = document.getElementById('closeBannerBtn')
-    const openModalBtn = document.getElementById('openModalBtn')
-    const signupModal = document.getElementById('signupModal')
-    const closeModalBtn = document.getElementById('closeModalBtn')
-    const registerForm = document.getElementById('registerForm')
-
-    // si chiud banner quando si clicca sulla 'X'
-    closeBannerBtn.addEventListener('click', () => {
-        signupBanner.classList.add('hidden')
-    });
-
-    // si apre la modale quando si clicca su 'Iscriviti gratis'
-    openModalBtn.addEventListener('click', () => {
-        signupModal.classList.add('active')
-        document.body.style.overflow = 'hidden' // Blocco dello scroll di sfondo
-    })
-
-    //  chiudela modal quando si clicca sulla 'X'
-    const closeModal = () => {
-        signupModal.classList.remove('active')
-        document.body.style.overflow = ''
-    };
-
-    closeModalBtn.addEventListener('click', closeModal)
-
-    // chiude la modal cliccando sull'overlay scuro esterno
-    signupModal.addEventListener('click', (e) => {
-        if (e.target === signupModal) {
-            closeModal();
-        }
-    })
-
-    registerForm.addEventListener('submit', (e) => {
-        e.preventDefault()
-
-        const email = document.getElementById('email').value;
-        const username = document.getElementById('username').value
-
-        alert(`Registrazione completata per ${username} (${email})! Benvenuto su Spotify Clone.`)
-
-        // acnhe se fittizio chiude la modale e nasconde il banner dopo la registrazione
-        closeModal()
-        signupBanner.classList.add('hidden')
-    })
-})
-
-
-
-// ❌ PRIMA:
-// if (!database || !Array.isArray(database.data)...
-
-// ✅ DOPO (Corretto):
-const searchArtists = async () => {
-    const value = searchInput.value.trim()
-
-    if (!value) {
-        rowArtist.innerHTML = ''
-
-        if (Array.isArray(databaseArtist.data)) {
-            databaseArtist.data.forEach(({ artist }) => {
-                rowArtist.append(createCardArtist(artist))
-            })
-        }
-
-        return
-    }
-
-    try {
-        const response = await fetch(`${API_URL}${encodeURIComponent(value)}`)
-        const data = await response.json()
-
-        if (!data || !Array.isArray(data.data) || data.data.length === 0) {
-            rowArtist.innerHTML = 'Nessun Artista'
-            return
-        }
-
-        rowArtist.innerHTML = ''
-
-        const uniqueArtists = new Map()
-
-        data.data.forEach(({ artist }) => {
-            if (!artist || !artist.name) return
-
-            const artistName = artist.name.toLowerCase()
-            const query = value.toLowerCase()
-
-            if (artistName.includes(query) && !uniqueArtists.has(artist.id)) {
-                uniqueArtists.set(artist.id, artist)
-            }
-        })
-
-        uniqueArtists.forEach((artist) => {
-            rowArtist.append(createCardArtist(artist))
-        })
-
-        if (rowArtist.children.length === 0) {
-            rowArtist.innerHTML = 'Nessun Artista'
-        }
-    } catch (error) {
-        console.log(error)
-        rowArtist.innerHTML = 'Nessun Artista'
-    }
-}
-
-//ricerca a ogni input
-searchInput.addEventListener('input', (e)=>{
-    e.preventDefault()
-    searchArtists()
-}
-)
-
-
-
-
-// -------- js brani di tendenza --------
-
-const container = document.getElementById("trendingSongsContainer")
-const trendingWrapper = document.getElementById("trendingWrapper")
-const leftArrow = document.getElementById("leftArrow")
-const rightArrow = document.getElementById("rightArrow")
+const trendingSection = document.querySelector(".trendingSection")
+const trendingContainer = trendingSection.querySelector(".cardsContainer")
+const radioSection = document.querySelector(".radioSection")
+const radioContainer = radioSection.querySelector(".cardsContainer")
 const svgNS = "http://www.w3.org/2000/svg"
 const artists = [
     "The Weeknd",
@@ -228,8 +107,19 @@ const artists = [
     "Rihanna",
     "David Guetta",
 ]
-let databaseSongs = []
 
+const radioArtists = [
+    "Dance",
+    "Rock",
+    "Pop",
+    "Jazz",
+    "Hip Hop",
+    "Electronic",
+    "Chill",
+    "House",
+]
+
+// fetch canzoni casuali per gli artisti selezionati
 const getRandomSongs = async (artists) => {
     try {
         const requests = artists.map((artist) =>
@@ -243,7 +133,6 @@ const getRandomSongs = async (artists) => {
         // unisco tutte le canzoni
         const songs = results.flatMap((result) => result.data)
 
-
         // elimino eventuali doppioni
         const uniqueSongs = songs.filter(
             (song, index, array) =>
@@ -252,9 +141,32 @@ const getRandomSongs = async (artists) => {
 
         // mischio le canzoni
         return uniqueSongs.sort(() => Math.random() - 0.5)
+
     } catch (e) {
         console.error("Errore durante il recupero delle canzoni:", e)
         return []
+    }
+}
+
+// fetch sezione radio, prendo 3 canzoni per ogni genere e le mostro in un massimo di 20 card
+const getPopularRadios = async () => {
+    try {
+        const requests = radioArtists.map((genre) =>
+            fetch(
+                `https://striveschool-api.herokuapp.com/api/deezer/search?q=${genre}`,
+            ).then((res) => res.json()),
+        )
+
+        const results = await Promise.all(requests)
+
+        const radios = results
+            .flatMap((result) => result.data.slice(0, 3))
+            .slice(0, 20)
+
+        renderCards(radios, radioContainer, createSongCard, "carouselSpacer")
+
+    } catch (e) {
+        console.error(e)
     }
 }
 
@@ -262,27 +174,77 @@ const getRandomSongs = async (artists) => {
 const getRandomArtists = (artists, number) => {
     return [...artists].sort(() => Math.random() - 0.5).slice(0, number)
 }
+
+// canzoni di tendenza, scelgo 6 artisti casuali e prendo le prime 20 canzoni
 const getArtistTrending = async () => {
     const randomArtists = getRandomArtists(artists, 6)
 
     const songs = await getRandomSongs(randomArtists)
-    databaseSongs = songs
-    songs.slice(0, 20).forEach((song) => {
-        container.appendChild(cardTrendingSongs(song))
+
+    const trendingSongs = songs.slice(0, 20)
+
+    sessionStorage.setItem("trendingSongs", JSON.stringify(trendingSongs))
+
+    renderCards(
+        trendingSongs,
+        trendingContainer,
+        createSongCard,
+        "carouselSpacer",
+    )
+}
+
+// funzione per renderizzare le card, con possibilità di aggiungere uno spacer alla fine
+const renderCards = (data, container, createCard, spacerClass) => {
+    container.innerHTML = ""
+
+    data.forEach((item) => {
+        container.appendChild(createCard(item))
     })
 
-  // creo div vuoto per avere il margine a fine carousel
-  const spacer = document.createElement("div")
-  spacer.className = "trendingSpacer"
-  container.appendChild(spacer)
+    if (spacerClass) {
+        const spacer = document.createElement("div")
+        spacer.className = spacerClass
+        container.appendChild(spacer)
+    }
+}
 
-  // Aggiorno lo stato iniziale delle frecce
-  updateTrendingArrows()
+// funzione per inizializzare il carosello con frecce di scorrimento
+const initCarousel = (carousel) => {
+    const wrapper = carousel.querySelector(".carouselContent")
+    const leftArrow = carousel.querySelector(".left")
+    const rightArrow = carousel.querySelector(".right")
 
+    const updateArrows = () => {
+        leftArrow.style.visibility = wrapper.scrollLeft <= 0 ? "hidden" : "visible"
+
+        rightArrow.style.visibility =
+            wrapper.scrollLeft >= wrapper.scrollWidth - wrapper.clientWidth - 1
+                ? "hidden"
+                : "visible"
+    }
+
+    leftArrow.addEventListener("click", () => {
+        wrapper.scrollBy({
+            left: -600,
+            behavior: "smooth",
+        })
+    })
+
+    rightArrow.addEventListener("click", () => {
+        wrapper.scrollBy({
+            left: 600,
+            behavior: "smooth",
+        })
+    })
+
+    wrapper.addEventListener("scroll", updateArrows)
+    window.addEventListener("resize", updateArrows)
+
+    updateArrows()
 }
 
 // funzione per creare le card destrutturando l'array
-const cardTrendingSongs = ({
+const createSongCard = ({
     title,
     artist: { name },
     album: { cover_medium },
@@ -340,36 +302,16 @@ const cardTrendingSongs = ({
     return col
 }
 
-// funzione per le frecce del carousel
+// inizializzo le funzioni per il caricamento delle canzoni di tendenza e delle radio
+const init = async () => {
+    await getArtistTrending()
 
-const updateTrendingArrows = () => {
-  // Controllo se il carosello è all'inizio
-  const isAtStart = trendingWrapper.scrollLeft <= 0
+    await getPopularRadios()
 
-
-    // Controllo se il carosello è arrivato alla fine
-    const isAtEnd =
-        trendingWrapper.scrollLeft + trendingWrapper.clientWidth >=
-        trendingWrapper.scrollWidth - 5
-
-    // Mostro o nascondo la freccia sinistra in base alla posizione
-    leftArrow.style.visibility = isAtStart ? "hidden" : "visible"
-    // Mostro o nascondo la freccia destra in base alla posizione
-    rightArrow.style.visibility = isAtEnd ? "hidden" : "visible"
+    document.querySelectorAll(".carouselWrapper").forEach(initCarousel)
 }
 
-trendingWrapper.addEventListener("scroll", updateTrendingArrows)
-window.addEventListener("resize", updateTrendingArrows)
-
-rightArrow.addEventListener("click", () =>
-    // Scorro il carosello verso destra di 600px con un'animazione fluida
-    trendingWrapper.scrollBy({ left: 600, behavior: "smooth" }),
-)
-
-leftArrow.addEventListener("click", () =>
-    // Scorro il carosello verso sinistra di 600px con un'animazione fluida
-    trendingWrapper.scrollBy({ left: -600, behavior: "smooth" }),
-)
+init()
 
 
 
@@ -501,148 +443,110 @@ const closemenu = document.getElementById('chiusura-menu')/* svg X chiusura */
 let aperto = false
 
 btncerca.addEventListener("click", (event) => {
-  event.preventDefault()
-  form.classList.toggle("apri")
-  search.classList.toggle('chiudi')
+    event.preventDefault()
+    form.classList.toggle("apri")
+    search.classList.toggle('chiudi')
 })
 
 menu.addEventListener('click', (event) => {
-  aperto = !aperto
-  sfondo.classList.toggle("apri", aperto)
+    aperto = !aperto
+    sfondo.classList.toggle("apri", aperto)
 
-  if (aperto) {
-    closemenu.style.display = 'block'
-    iconamenu.style.display = 'none'
-  } else {
-    iconamenu.style.display = 'block'
-    closemenu.style.display = 'none'
-  }
+    if (aperto) {
+        closemenu.style.display = 'block'
+        iconamenu.style.display = 'none'
+    } else {
+        iconamenu.style.display = 'block'
+        closemenu.style.display = 'none'
+    }
 })
 
 
 
 // ------------------- RICERCA -------------------------------- //
 
-// nuova ottimizzazione
-// API SEARCH
-const searchAPI = async (query) => {
+const searchArtists = async () => {
+    const value = searchInput?.value.trim() ?? ""
+
+    if (!value) {
+        if (songTitle) {
+            songTitle.textContent = "Brani di tendenza"
+        }
+        getInitialData()
+        return
+    }
+
     try {
-        const response = await fetch(`${API_URL}${query}`)
+        const response = await fetch(`${API_URL}${encodeURIComponent(value)}`)
         const data = await response.json()
-        console.log(data.data)
-        renderArtist(data.data[1]?.artist)
-        renderAlbums(data.data)
-        renderSongs(data.data)
+        const results = Array.isArray(data?.data) ? data.data : []
+
+        rowArtist.innerHTML = ""
+
+        if (!results.length) {
+            rowArtist.textContent = "Nessun artista"
+            return
+        }
+
+        const uniqueArtists = new Map()
+
+        results.forEach(({ artist }) => {
+            if (!artist || !artist.name) return
+
+            const artistName = artist.name.toLowerCase()
+            const query = value.toLowerCase()
+
+            if (artistName.includes(query) && !uniqueArtists.has(artist.id)) {
+                uniqueArtists.set(artist.id, artist)
+            }
+        })
+
+        if (uniqueArtists.size === 0) {
+            rowArtist.textContent = "Nessun artista"
+            return
+        }
+
+        if (songTitle) {
+            songTitle.textContent = `Risultati per "${value}"`
+        }
+
+        uniqueArtists.forEach((artist) => {
+            rowArtist.append(createCardArtist(artist))
+        })
     } catch (error) {
-        console.log(error)
-        renderError()
-    }
-}
-
-// RENDER ARTIST
-const renderArtist = (artist) => {
-
-    rowArtist.innerHTML = ""
-
-    if (!artist) {
+        console.error(error)
         rowArtist.textContent = "Nessun artista"
-        return
-    }
-
-    rowArtist.append(createCardArtist(artist))
-}
-
-const renderAlbums = (songs) => {
-
-    albumsContainer.innerHTML = ""
-
-    if (!songs || songs.length === 0) {
-        albumsContainer.textContent = "Nessun album"
-        return
-    }
-
-
-    const uniqueSongs = songs.filter((song, index, array) => {
-        return index === array.findIndex(item =>
-            item.album.title === song.album.title
-        )
-    })
-
-    uniqueSongs.forEach(song => {
-        albumsContainer.append(createAlbumCards(song))
-    })
-
-}
-
-
-
-// RENDER SONGS
-const renderSongs = (songs) => {
-    container.innerHTML = ""
-    if (!songs || songs.length === 0) {
-        container.textContent = "Nessuna canzone"
-        return
-    }
-
-    songs.forEach(song => {
-        container.append(cardTrendingSongs(song))
-    })
-}
-
-// ERROR MESSAGE
-const renderError = () => {
-
-    rowArtist.textContent = "Nessun artista"
-
-    albumsContainer.textContent = "Nessun album"
-
-    container.textContent = "Nessuna canzone"
-}
-
-// SEARCH EVENT
-// ✅ DOPO (Corretto):
-searchForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-    const query = searchInput.value.trim().toLowerCase()
-
-    if (query === "") {
-        renderError()
-        return
-    }
-    
-    if (songTitle) {
-        songTitle.innerText = "Brani"
-    }
-    
-    searchAPI(query)
-})
-
-// ripristina la pagina iniziale (circa perchè alcune cose sono randomizzate, dovrei salvare i dati?)
-// ✅ DOPO (Corretto):
-const getInitialData = () => {
-    albumsContainer.innerHTML = ""
-    container.innerHTML = ""
-    rowArtist.innerHTML = ""
-
-    getAlbums()
-    getArtist()
-    getArtistTrending()
-    
-    // Il controllo `if (songTitle)` evita il blocco dell'applicazione
-    if (songTitle) {
-        songTitle.innerText = "Brani di tendenza"
     }
 }
 
-// se la barra di ricerca è vuota richiama le funzioni iniziali
-searchInput.addEventListener("input", () => {
+searchInput?.addEventListener("input", () => {
     const query = searchInput.value.trim()
     if (query === "") {
         getInitialData()
+        return
     }
+
+    searchArtists()
 })
 
+searchForm?.addEventListener("submit", (event) => {
+    event.preventDefault()
+    searchArtists()
+})
 
+const getInitialData = async () => {
+    if (rowArtist) rowArtist.innerHTML = ""
+    if (albumsContainer) albumsContainer.innerHTML = ""
+    if (trendingContainer) trendingContainer.innerHTML = ""
+
+    await getArtist()
+    await getAlbums()
+    await getArtistTrending()
+
+    if (songTitle) {
+        songTitle.textContent = "Brani di tendenza"
+    }
+}
 
 getInitialData()
 
