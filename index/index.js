@@ -324,7 +324,7 @@ const albumsContainer = document.getElementById('albumsContainer')
 const swiperContainers = document.querySelectorAll("#albumsSwiperContainer")
 
 // fetch ALBUM
-const getAlbums = async () => {
+const getAlbums = async (artistsAlbum) => {
     try {
         const fetchPromises = artists.map(artist =>
             fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${encodeURIComponent(artist)}&limit=1`)
@@ -338,10 +338,13 @@ const getAlbums = async () => {
         console.log(e)
     }
 }
-getAlbums()
+getAlbums(artistsAlbum)
 
 //card ALBUM
 const createAlbumCards = (album) => {
+    const albumId = album.album ? album.album.id : album.id
+    console.log("Stai creando la card per l'ALBUM ID:", albumId)
+
     const colAlbums = document.createElement('div')
     colAlbums.classList.add('col', 'no-wrap', 'mt-3')
     const cardAlbum = document.createElement('div')
@@ -355,12 +358,22 @@ const createAlbumCards = (album) => {
     const albumTitle = document.createElement('a')
     albumTitle.classList.add('card-title', 'albumTitle')
     albumTitle.innerText = album.album.title
+    albumTitle.href = `../album/album.html?id=${albumId}`
     const albumArtist = document.createElement('a')
     albumArtist.classList.add('card-text', 'albumArtistName')
     albumArtist.innerText = album.artist.name
-    const cardPlay = document.createElement('button')
+    const cardPlay = document.createElement('a')
     cardPlay.classList.add('playButton')
+    
     cardPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`
+    
+    const goToAlbumPage = (e) => {
+        e.stopPropagation()
+        window.location.href = `../album/album.html?id=${albumId}`
+    }
+
+    cardPlay.addEventListener('click', goToAlbumPage)
+    cardAlbum.addEventListener('click',goToAlbumPage)
 
     cardBodyAlbum.append(albumTitle, albumArtist)
     cardAlbum.append(imgAlbum, cardPlay, cardBodyAlbum)
@@ -384,6 +397,7 @@ const displayAlbums = (albums) => {
     })
 
     const top10Albums = uniqueAlbums.slice(0, 10)
+    console.log(top10Albums)
 
     const albumCards = top10Albums.map(createAlbumCards)
     albumsContainer.append(...albumCards)
