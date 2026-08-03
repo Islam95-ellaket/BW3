@@ -76,23 +76,29 @@ const updateArtistArrows = () => {
     rightArrowArtist.style.visibility = isAtEnd ? "hidden" : "visible"
 }
 
-artistWrapper.addEventListener("scroll", updateArtistArrows)
-window.addEventListener("resize", updateArtistArrows)
+if (artistWrapper) {
+    artistWrapper.addEventListener("scroll", updateArtistArrows)
+    window.addEventListener("resize", updateArtistArrows)
+}
 
-rightArrowArtist.addEventListener("click", () =>
-    artistWrapper.scrollBy({ left: SCROLL_DISTANCE, behavior: "smooth" })
-)
+if (rightArrowArtist && artistWrapper) {
+    rightArrowArtist.addEventListener("click", () =>
+        artistWrapper.scrollBy({ left: SCROLL_DISTANCE, behavior: "smooth" })
+    )
+}
 
-leftArrowArtist.addEventListener("click", () =>
-    artistWrapper.scrollBy({ left: -SCROLL_DISTANCE, behavior: "smooth" })
-)
+if (leftArrowArtist && artistWrapper) {
+    leftArrowArtist.addEventListener("click", () =>
+        artistWrapper.scrollBy({ left: -SCROLL_DISTANCE, behavior: "smooth" })
+    )
+}
 
 // --------js brani di tendenza e radio--------
 
 const trendingSection = document.querySelector(".trendingSection")
-const trendingContainer = trendingSection.querySelector(".cardsContainer")
+const trendingContainer = trendingSection ? trendingSection.querySelector(".cardsContainer") : null
 const radioSection = document.querySelector(".radioSection")
-const radioContainer = radioSection.querySelector(".cardsContainer")
+const radioContainer = radioSection ? radioSection.querySelector(".cardsContainer") : null
 const svgNS = "http://www.w3.org/2000/svg"
 const artists = [
     "The Weeknd",
@@ -304,14 +310,20 @@ const createSongCard = ({
 
 // inizializzo le funzioni per il caricamento delle canzoni di tendenza e delle radio
 const init = async () => {
-    await getArtistTrending()
+    if (trendingContainer) {
+        await getArtistTrending()
+    }
 
-    await getPopularRadios()
+    if (radioContainer) {
+        await getPopularRadios()
+    }
 
     document.querySelectorAll(".carouselWrapper").forEach(initCarousel)
 }
 
-init()
+if (document.querySelector(".trendingSection") || document.querySelector(".radioSection")) {
+    init()
+}
 
 
 
@@ -320,10 +332,8 @@ const artistsAlbum = ["Taylor Swift", "Billie Eilish", "Bad Bunny", "Sabrina Car
 const albumsContainer = document.getElementById('albumsContainer')
 const swiperContainers = document.querySelectorAll("#albumsSwiperContainer")
 
-let databaseAlbums = []
-
 // fetch ALBUM
-const getAlbums = async () => {
+const getAlbums = async (artistsAlbum) => {
     try {
         const fetchPromises = artists.map(artist =>
             fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${encodeURIComponent(artist)}&limit=1`)
@@ -337,9 +347,13 @@ const getAlbums = async () => {
         console.log(e)
     }
 }
+getAlbums(artistsAlbum)
 
 //card ALBUM
 const createAlbumCards = (album) => {
+    const albumId = album.album ? album.album.id : album.id
+    console.log("Stai creando la card per l'ALBUM ID:", albumId)
+
     const colAlbums = document.createElement('div')
     colAlbums.classList.add('col', 'no-wrap', 'mt-3')
     const cardAlbum = document.createElement('div')
@@ -353,12 +367,22 @@ const createAlbumCards = (album) => {
     const albumTitle = document.createElement('a')
     albumTitle.classList.add('card-title', 'albumTitle')
     albumTitle.innerText = album.album.title
+    albumTitle.href = `../album/album.html?id=${albumId}`
     const albumArtist = document.createElement('a')
     albumArtist.classList.add('card-text', 'albumArtistName')
     albumArtist.innerText = album.artist.name
-    const cardPlay = document.createElement('button')
+    const cardPlay = document.createElement('a')
     cardPlay.classList.add('playButton')
+
     cardPlay.innerHTML = `<i class="bi bi-play-circle-fill"></i>`
+
+    const goToAlbumPage = (e) => {
+        e.stopPropagation()
+        window.location.href = `../album/album.html?id=${albumId}`
+    }
+
+    cardPlay.addEventListener('click', goToAlbumPage)
+    cardAlbum.addEventListener('click', goToAlbumPage)
 
     cardBodyAlbum.append(albumTitle, albumArtist)
     cardAlbum.append(imgAlbum, cardPlay, cardBodyAlbum)
@@ -382,6 +406,7 @@ const displayAlbums = (albums) => {
     })
 
     const top10Albums = uniqueAlbums.slice(0, 10)
+    console.log(top10Albums)
 
     const albumCards = top10Albums.map(createAlbumCards)
     albumsContainer.append(...albumCards)
@@ -442,24 +467,28 @@ const iconamenu = document.getElementById('icona-menu')/* svg del menu */
 const closemenu = document.getElementById('chiusura-menu')/* svg X chiusura */
 let aperto = false
 
-btncerca.addEventListener("click", (event) => {
-    event.preventDefault()
-    form.classList.toggle("apri")
-    search.classList.toggle('chiudi')
-})
+if (btncerca && form && search) {
+    btncerca.addEventListener("click", (event) => {
+        event.preventDefault()
+        form.classList.toggle("apri")
+        search.classList.toggle('chiudi')
+    })
+}
 
-menu.addEventListener('click', (event) => {
-    aperto = !aperto
-    sfondo.classList.toggle("apri", aperto)
+if (menu && sfondo && iconamenu && closemenu) {
+    menu.addEventListener('click', (event) => {
+        aperto = !aperto
+        sfondo.classList.toggle("apri", aperto)
 
-    if (aperto) {
-        closemenu.style.display = 'block'
-        iconamenu.style.display = 'none'
-    } else {
-        iconamenu.style.display = 'block'
-        closemenu.style.display = 'none'
-    }
-})
+        if (aperto) {
+            closemenu.style.display = 'block'
+            iconamenu.style.display = 'none'
+        } else {
+            iconamenu.style.display = 'block'
+            closemenu.style.display = 'none'
+        }
+    })
+}
 
 
 
@@ -539,14 +568,16 @@ const getInitialData = async () => {
     if (albumsContainer) albumsContainer.innerHTML = ""
     if (trendingContainer) trendingContainer.innerHTML = ""
 
-    await getArtist()
-    await getAlbums()
-    await getArtistTrending()
+    if (rowArtist) await getArtist()
+    if (albumsContainer) await getAlbums()
+    if (trendingContainer) await getArtistTrending()
 
     if (songTitle) {
         songTitle.textContent = "Brani di tendenza"
     }
 }
 
-getInitialData()
+if (rowArtist || albumsContainer || trendingContainer) {
+    getInitialData()
+}
 

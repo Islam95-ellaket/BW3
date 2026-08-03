@@ -1,0 +1,206 @@
+/*lg-xl-xxl (Default Desktop)*/
+
+#albumImg {
+    width: 250px;
+    border-radius: 2%;
+}
+
+#albumTitle {
+    font-size: 4em;
+    font-weight: 800;
+    line-height: 1.2;
+    text-wrap: pretty;
+    width: 100%;
+}
+
+#artistImg {
+    width: 30px;
+    border-radius: 50%;
+}
+
+#albumType {
+    font-size: 0.8rem;
+}
+
+#albumArtist {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+#albumDuration {
+    font-size: 0.9rem;
+}
+
+.playBtn {
+    color: #1ed760;
+    font-size: 45pt;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: black;
+    border: solid 6px #1ed760;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plusBtn {
+    font-size: 25pt;
+    color: #b3b3b3;
+}
+
+.menuBtn {
+    color: #b3b3b3;
+    font-size: 20pt;
+}
+
+.layoutView {
+    color: #b3b3b3;
+    font-size: 10pt;
+    display: flex;
+    align-items: center;
+}
+
+.layoutViewIcon {
+    font-size: 20pt;
+    display: flex;
+}
+
+.cardAlbum {
+    background-color: transparent;
+    transition: all 0.4s ease-in-out;
+    padding: 12px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.cardAlbum:hover {
+    background-color: #3838384d;
+    cursor: pointer;
+}
+
+.imgAlbum {
+    width: 180px;
+    height: auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.albumTitle {
+    font-size: 14pt;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    text-wrap: pretty;
+}
+
+.albumTitle:hover {
+    text-decoration: underline;
+}
+
+.albumArtistName {
+    text-decoration: none;
+    color: #b3b3b3;
+    font-size: 11pt;
+    font-weight: 300;
+    line-height: 10pt;
+}
+
+.albumArtistName:hover {
+    text-decoration: underline;
+}
+
+.playButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1ed760;
+    font-size: 35pt;
+    background-color: black;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 140px;
+    left: 130px;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.cardAlbum:hover .playButton {
+    opacity: 1;
+    top: 125px;
+}
+
+.playButton:hover {
+    color: rgb(59, 228, 119);
+}
+
+/* ==========================================
+   MEDIA QUERIES (In ordine decrescente)
+   ========================================== */
+
+/* 1. Laptop / Schermi Medi (<= 1332px) */
+@media (max-width: 1332px) {
+    #albumImg {
+        width: 250px;
+        border-radius: 2%;
+    }
+
+    #albumTitle {
+        font-size: 3em;
+        text-wrap: pretty;
+        text-align: left;
+    }
+}
+
+/* 2. Tablet (<= 991px) */
+@media (max-width: 991px) {
+    #albumImg {
+        width: 250px;
+        border-radius: 2%;
+    }
+
+    #albumTitle {
+        font-size: 2em;
+        text-wrap: pretty;
+        text-align: left;
+    }
+}
+
+/* 3. Smartphone (<= 767px) */
+@media (max-width: 767px) {
+    #albumImg {
+        width: 250px;
+        border-radius: 2%;
+    }
+
+    #albumTitle {
+        font-size: 1.2em;
+        text-wrap: pretty;
+        text-align: left;
+    }
+
+    .playBtn {
+        font-size: 25pt;
+        border: none;
+        order: 3;
+    }
+
+    .plusBtn {
+        font-size: 20pt;
+        color: #b3b3b3;
+        order: 1;
+    }
+
+    .menuBtn {
+        color: #b3b3b3;
+        font-size: 15pt;
+        order: 2;
+    }
+
+    .layoutView {
+        display: none;
+    }
+}

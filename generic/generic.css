@@ -79,7 +79,7 @@ body {
 /* scrollbar personalizzata */
 .mainContent {
     flex-grow: 1;
-    background: #121212;
+    background: linear-gradient(to bottom, #212121 0%, #121212 300px, #121212 100%);
     border-radius: 8px;
     overflow: hidden;     /*importantissimo */
     position: relative;
