@@ -15,7 +15,7 @@ const trackRow = document.getElementById('trackRow')
 
 //getElement x ALTRI ALBUM 
 const otherAlbumsArtist=document.getElementById('otherAlbumsArtist')
-const albumsContainer = document.getElementById('albumsContainer')
+const otherAlbumsContainer = document.getElementById('otherAlbumsContainer')
 
 
 
@@ -181,8 +181,8 @@ const createAlbumCards = (album) => {
 }
 
 const displayOtherAlbums = (albums) => {
-    if (!albumsContainer || !Array.isArray(albums)) return;
-    albumsContainer.innerHTML = ''
+    if (!otherAlbumsContainer || !Array.isArray(albums)) return;
+    otherAlbumsContainer.innerHTML = ''
 
     const addedAlbumIds = new Set()
 
@@ -200,5 +200,5 @@ const displayOtherAlbums = (albums) => {
     console.log("Album mostrati nel footer:", top10Albums)
 
     const albumCards = top10Albums.map(createAlbumCards)
-    albumsContainer.append(...albumCards)
+    otherAlbumsContainer.append(...albumCards)
 }
