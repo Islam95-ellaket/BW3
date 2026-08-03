@@ -2,6 +2,7 @@
 <html lang="it">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://googleapis.com">
@@ -20,62 +21,107 @@
 
 <body>
     <!----------------------- inizio navbar ----------------------->
-    <!-- parte logo spotify -->
-    <nav class="navbar navbar-expand-lg bg-body-black">
-        <div class="container-fluid d-flex">
-            <a class="navbar-brand  d-flex lign-items-center" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-spotify"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288" />
-                </svg>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <header>
 
-            <!-- parte logo home -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <li class="nav-item">
-                    <button id="icona-home">
-                        <a class="nav-link active" aria-current="page" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-house"
-                                viewBox="0 0 16 16">
+        <nav class="nav">
+            <!-- parte sinistra spotify icona -->
+            <div class="parte-sinistra">
+                <a class="nav-link active" id="spotify" aria-current="page" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-spotify" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288" />
+                    </svg>
+                    Spotify
+                </a>
+            </div>
+
+
+            <!-- icone della home insime al bottone -->
+
+            <div class="home-search">
+                <div class="home">
+                    <button id="home-btn">
+                        <a class="nav-link" id="casetta" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-house" viewBox="0 0 16 16 ">
                                 <path
                                     d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
                             </svg>
                         </a>
                     </button>
-                </li>
 
-
-
-
-                <!-- parte di ricerca -->
-                <form class="d-flex" role="search" id="searchForm">
-                    <input class="form-control me-2" type="search" placeholder="cosa vuoi ascoltare?"
-                        aria-label="Search" id="searchInput" />
-                </form>
-                <div class="end-navbar">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Premio Assistenza Scarica |</a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
-                        </svg>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">installa app</a>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">iscriviti </a>
-                        <button>accedi</button>
-                    </li>
                 </div>
+
+
+                <!-- parte della ricerca insieme le icone home e upload -->
+                <form class="navigation" role="search" id="searchForm">
+                    <div class="icona-cerca">
+                        <button id="bottone-cerca">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- la barra di ricerca e icona del upload -->
+                    <div id="bottone-input">
+                        <input class="form-control me-2" id="searchInput" type="search"
+                            placeholder="Cosa Vuoi Ascoltare?" aria-label="Search" />
+                        <div class="icona-upload">
+                            <button id="imagy-upload">
+                                <img src="open.spotify.com_intl-it__-_Copia-removebg-preview.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
             </div>
-        </div>
-    </nav>
+
+
+            <!-- parte destra i tre link insieme al bottone  -->
+            <div class="parte-destra">
+                <ul class="nav-partedestra">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="border-premium" aria-current="page" href="#">Premium Assistenza
+                            Scarica </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="Installa" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                            </svg>Installa App</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">iscriviti</a>
+                    </li>
+                    <button>Accedi</button>
+
+                </ul>
+            </div>
+            <button id="menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" id="icona-menu" fill="currentColor"
+                    class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" id="chiusura-menu" fill="currentColor"
+                    class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path
+                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+
     <!----------------------- fine navbar ----------------------->
 
 
@@ -149,188 +195,208 @@
 
         <main class="mainContent">
 
-            <section class="trendingSection">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h2 class="fs-3 fw-bold mb-0">
-                        <a href="#" class="text-light">Brani di tendenza</a>
-                    </h2>
-                    <a class="showAllLink text-secondary fw-bold d-none d-md-flex" href="#">
-                        Mostra tutto
-                    </a>
+                <div id="sfondo-accesso">
+                    <ul>
+                        <li>
+                            <a href="Premium Assistenza Scarica">Premium Assistenza Scarica</a>
+                        </li>
+                        <li>
+                            <a href="installa">Installa</a>
+                        </li>
+                        <li>
+                            <a href="Iscriviti">Iscrivit</a>
+                        </li>
+                        <li>
+                            <button>
+                                <a href="Accedi">Accedi</a>
+                            </button>
+                        </li>
+                    </ul>
                 </div>
-                <div class="carouselWrapper">
 
-                    <button class="carouselArrow left" id="leftArrow">
-                        <i class="bi bi-chevron-left"></i>
-                    </button>
-
-                    <div id="trendingWrapper">
-                        <div id="trendingSongsContainer"></div>
+                <section class="trendingSection">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2 class="fs-3 fw-bold mb-0">
+                            <a href="#" class="text-light">Brani di tendenza</a>
+                        </h2>
+                        <a class="showAllLink text-secondary fw-bold d-none d-md-flex" href="#">
+                            Mostra tutto
+                        </a>
                     </div>
+                    <div class="carouselWrapper">
 
-                    <button class="carouselArrow right" id="rightArrow">
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
-
-                </div>
-            </section>
-
-            <section class="artist-section mx-4">
-                <div class="d-flex justify-content-between my-4">
-                    <a href="#"
-                        class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover small ">
-                        <h4 class="text-white fw-bold mb-0">Artisti più popolari</h4>
-                    </a>
-                    <a href="#"
-                        class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover small">
-                        Mostra tutto
-                    </a>
-                </div>
-
-                <div class="carouselWrapperArtist">
-                    <button class="carouselArrowArtist left" id="leftArrowArtist">
-                        <i class="bi bi-chevron-left"></i>
-                    </button>
-
-                    <div id="artistWrapper">
-                        <div id="rowArtist" class="d-flex flex-nowrap"></div>
-                    </div>
-
-                    <button class="carouselArrowArtist right" id="rightArrowArtist">
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
-
-                </div>
-            </section>
-
-            <section id="albumsContainerSerena" class="text-white text-nowrap my-4 ms-4 me-2">
-                <div class="container ">
-                    <div class="row d-flex align-items-center">
-                        <div class="col-9 col-md-9 col-lg-10"><a class="titleSections">Album e singoli
-                                popolari</a></div>
-                        <div class="col-3 col-md-3 col-lg-2"><a class="showAll">Mostra tutto</a></div>
-                    </div>
-                    <div id="albumsSwiperContainer" class="position-relative">
-                        <button id="btn-left" class="scroller-btn btn custom-swiper-btn btn-left"
-                            aria-label="swipe left">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-chevron-left custom-btn-swipe-svg" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
-                            </svg>
+                        <button class="carouselArrow left" id="leftArrow">
+                            <i class="bi bi-chevron-left"></i>
                         </button>
-                        <button id="btn-right" class="scroller-btn btn btn-right custom-swiper-btn btn-right end-0"
-                            aria-label="swipe right">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-chevron-right custom-btn-swipe-svg" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
-                            </svg>
+
+                        <div id="trendingWrapper">
+                            <div id="trendingSongsContainer"></div>
+                        </div>
+
+                        <button class="carouselArrow right" id="rightArrow">
+                            <i class="bi bi-chevron-right"></i>
                         </button>
-                        <div id="albumsContainer" class="row d-flex flex-nowrap overflow-x-auto"></div>
+
                     </div>
+                </section>
+
+                <section class="artist-section mx-4">
+                    <div class="d-flex justify-content-between my-4">
+                        <a href="#"
+                            class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover small ">
+                            <h4 class="text-white fw-bold mb-0">Artisti più popolari</h4>
+                        </a>
+                        <a href="#"
+                            class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover small">
+                            Mostra tutto
+                        </a>
+                    </div>
+
+                    <div class="carouselWrapperArtist">
+                        <button class="carouselArrowArtist left" id="leftArrowArtist">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+
+                        <div id="artistWrapper">
+                            <div id="rowArtist" class="d-flex flex-nowrap"></div>
+                        </div>
+
+                        <button class="carouselArrowArtist right" id="rightArrowArtist">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+
+                    </div>
+                </section>
+
+                <section id="albumsContainerSerena" class="text-white text-nowrap my-4 ms-4 me-2">
+                    <div class="container ">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9 col-md-9 col-lg-10"><a class="titleSections">Album e singoli
+                                    popolari</a></div>
+                            <div class="col-3 col-md-3 col-lg-2"><a class="showAll">Mostra tutto</a></div>
+                        </div>
+                        <div id="albumsSwiperContainer" class="position-relative">
+                            <button id="btn-left" class="scroller-btn btn custom-swiper-btn btn-left"
+                                aria-label="swipe left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-chevron-left custom-btn-swipe-svg" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                                </svg>
+                            </button>
+                            <button id="btn-right" class="scroller-btn btn btn-right custom-swiper-btn btn-right end-0"
+                                aria-label="swipe right">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-chevron-right custom-btn-swipe-svg" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                                </svg>
+                            </button>
+                            <div id="albumsContainer" class="row d-flex flex-nowrap overflow-x-auto"></div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!----------------------- inizio footer  ----------------------->
+                <div class="container">
+                    <hr>
+                    <footer>
+                        <nav>
+                            <div
+                                class="container d-flex flex-column flex-lg-row justify-content-between mt-6 topSection">
+
+                                <div class="row"> <!-- container dei link -->
+                                    <div class="col-12 col-md-6 col-lg-3 links">
+                                        <h6>Azienda</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#">Chi siamo</a></li>
+                                            <li><a href="#">Oppurtunità di lavoro</a></li>
+                                            <li><a href="#">For the Record</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-3 links">
+                                        <h6>Community</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#">Per artisti</a></li>
+                                            <li><a href="#">Sviluppatori</a></li>
+                                            <li><a href="#">Pubblicità</a></li>
+                                            <li><a href="#">Investitori</a></li>
+                                            <li><a href="#">Venditori</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-3 links">
+                                        <h6>Link utili</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#">Assistenza</a></li>
+                                            <li><a href="#">App per cellulare gratuita</a></li>
+                                            <li><a href="#">Diritti del consumatore</a></li>
+                                            <li><a href="#">Popolare per paese</a></li>
+                                            <li><a href="#">Importa la tua musica</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-3 links">
+                                        <h6>Piani Spotify</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#">Premium Individual</a></li>
+                                            <li><a href="#">Premium Duo</a></li>
+                                            <li><a href="#">Premium Family</a></li>
+                                            <li><a href="#">Premium Student</a></li>
+                                            <li><a href="#">Spotify free</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="d-flex containerSocial"> <!-- container dei social -->
+                                    <div>
+                                        <a href="https://instagram.com/spotify">
+                                            <span>
+                                                <svg>
+                                                    <path
+                                                        d="M8 1.44c2.136 0 2.389.009 3.233.047.78.036 1.203.166 1.485.276.348.128.663.332.921.598.266.258.47.573.599.921.11.282.24.706.275 1.485.039.844.047 1.097.047 3.233s-.008 2.389-.047 3.232c-.035.78-.166 1.204-.275 1.486a2.65 2.65 0 0 1-1.518 1.518c-.282.11-.706.24-1.486.275-.843.039-1.097.047-3.233.047s-2.39-.008-3.232-.047c-.78-.035-1.204-.165-1.486-.275a2.5 2.5 0 0 1-.921-.599 2.5 2.5 0 0 1-.599-.92c-.11-.282-.24-.706-.275-1.486-.038-.844-.047-1.096-.047-3.232s.009-2.39.047-3.233c.036-.78.166-1.203.275-1.485.129-.348.333-.663.599-.921a2.5 2.5 0 0 1 .92-.599c.283-.11.707-.24 1.487-.275.843-.038 1.096-.047 3.232-.047L8 1.441zm.001-1.442c-2.172 0-2.445.01-3.298.048-.854.04-1.435.176-1.943.373a3.9 3.9 0 0 0-1.417.923c-.407.4-.722.883-.923 1.417-.198.508-.333 1.09-.372 1.942S0 5.826 0 8c0 2.172.01 2.445.048 3.298.04.853.174 1.433.372 1.941.2.534.516 1.017.923 1.417.4.407.883.722 1.417.923.508.198 1.09.333 1.942.372s1.126.048 3.299.048 2.445-.01 3.298-.048c.853-.04 1.433-.174 1.94-.372a4.1 4.1 0 0 0 2.34-2.34c.199-.508.334-1.09.373-1.942S16 10.172 16 7.999s-.01-2.445-.048-3.298c-.04-.853-.174-1.433-.372-1.94a3.9 3.9 0 0 0-.923-1.418A3.9 3.9 0 0 0 13.24.42c-.508-.197-1.09-.333-1.942-.371-.851-.041-1.125-.05-3.298-.05z">
+                                                    </path>
+                                                    <path
+                                                        d="M8 3.892a4.108 4.108 0 1 0 0 8.216 4.108 4.108 0 0 0 0-8.216m0 6.775a2.668 2.668 0 1 1 0-5.335 2.668 2.668 0 0 1 0 5.335m4.27-5.978a.96.96 0 1 0 0-1.92.96.96 0 0 0 0 1.92"
+                                                        class="cz-color-16777215">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://x.com/spotify">
+                                            <span>
+                                                <svg>
+                                                    <path
+                                                        d="M9.303 6.928 14.403 1h-1.208L8.766 6.147 5.23 1H1.15L6.5 8.784 1.15 15h1.208l4.676-5.436L10.77 15h4.08zM7.648 8.852l-.542-.775L2.795 1.91H4.65l3.48 4.977.541.775 4.523 6.47H11.34l-3.691-5.28Z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div><a href="https://www.facebook.com/spotify"><span><svg>
+                                                    <path
+                                                        d="M16 8a8 8 0 1 0-9.25 7.903v-5.59H4.719V8H6.75V6.237c0-2.005 1.194-3.112 3.022-3.112.875 0 1.79.156 1.79.156V5.25h-1.008c-.994 0-1.304.617-1.304 1.25V8h2.219l-.355 2.313H9.25v5.59A8 8 0 0 0 16 8">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="container d-flex justify-content-end"> <!-- copyright -->
+                                <div>
+                                    <span>© 2026 Spotify AB</span>
+                                </div>
+
+                            </div>
+                        </nav>
+                    </footer>
                 </div>
-            </section>
+                <!----------------------- fine footer  ----------------------->
 
 
-            <!----------------------- inizio footer  ----------------------->
-            <div class="container">
-                <hr>
-                <footer>
-                    <nav>
-                        <div class="container d-flex flex-column flex-lg-row justify-content-between mt-6 topSection">
-
-                            <div class="row"> <!-- container dei link -->
-                                <div class="col-12 col-md-6 col-lg-3 links">
-                                    <h6>Azienda</h6>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#">Chi siamo</a></li>
-                                        <li><a href="#">Oppurtunità di lavoro</a></li>
-                                        <li><a href="#">For the Record</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-3 links">
-                                    <h6>Community</h6>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#">Per artisti</a></li>
-                                        <li><a href="#">Sviluppatori</a></li>
-                                        <li><a href="#">Pubblicità</a></li>
-                                        <li><a href="#">Investitori</a></li>
-                                        <li><a href="#">Venditori</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-3 links">
-                                    <h6>Link utili</h6>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#">Assistenza</a></li>
-                                        <li><a href="#">App per cellulare gratuita</a></li>
-                                        <li><a href="#">Diritti del consumatore</a></li>
-                                        <li><a href="#">Popolare per paese</a></li>
-                                        <li><a href="#">Importa la tua musica</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-3 links">
-                                    <h6>Piani Spotify</h6>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#">Premium Individual</a></li>
-                                        <li><a href="#">Premium Duo</a></li>
-                                        <li><a href="#">Premium Family</a></li>
-                                        <li><a href="#">Premium Student</a></li>
-                                        <li><a href="#">Spotify free</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="d-flex containerSocial"> <!-- container dei social -->
-                                <div>
-                                    <a href="https://instagram.com/spotify">
-                                        <span>
-                                            <svg>
-                                                <path
-                                                    d="M8 1.44c2.136 0 2.389.009 3.233.047.78.036 1.203.166 1.485.276.348.128.663.332.921.598.266.258.47.573.599.921.11.282.24.706.275 1.485.039.844.047 1.097.047 3.233s-.008 2.389-.047 3.232c-.035.78-.166 1.204-.275 1.486a2.65 2.65 0 0 1-1.518 1.518c-.282.11-.706.24-1.486.275-.843.039-1.097.047-3.233.047s-2.39-.008-3.232-.047c-.78-.035-1.204-.165-1.486-.275a2.5 2.5 0 0 1-.921-.599 2.5 2.5 0 0 1-.599-.92c-.11-.282-.24-.706-.275-1.486-.038-.844-.047-1.096-.047-3.232s.009-2.39.047-3.233c.036-.78.166-1.203.275-1.485.129-.348.333-.663.599-.921a2.5 2.5 0 0 1 .92-.599c.283-.11.707-.24 1.487-.275.843-.038 1.096-.047 3.232-.047L8 1.441zm.001-1.442c-2.172 0-2.445.01-3.298.048-.854.04-1.435.176-1.943.373a3.9 3.9 0 0 0-1.417.923c-.407.4-.722.883-.923 1.417-.198.508-.333 1.09-.372 1.942S0 5.826 0 8c0 2.172.01 2.445.048 3.298.04.853.174 1.433.372 1.941.2.534.516 1.017.923 1.417.4.407.883.722 1.417.923.508.198 1.09.333 1.942.372s1.126.048 3.299.048 2.445-.01 3.298-.048c.853-.04 1.433-.174 1.94-.372a4.1 4.1 0 0 0 2.34-2.34c.199-.508.334-1.09.373-1.942S16 10.172 16 7.999s-.01-2.445-.048-3.298c-.04-.853-.174-1.433-.372-1.94a3.9 3.9 0 0 0-.923-1.418A3.9 3.9 0 0 0 13.24.42c-.508-.197-1.09-.333-1.942-.371-.851-.041-1.125-.05-3.298-.05z">
-                                                </path>
-                                                <path
-                                                    d="M8 3.892a4.108 4.108 0 1 0 0 8.216 4.108 4.108 0 0 0 0-8.216m0 6.775a2.668 2.668 0 1 1 0-5.335 2.668 2.668 0 0 1 0 5.335m4.27-5.978a.96.96 0 1 0 0-1.92.96.96 0 0 0 0 1.92"
-                                                    class="cz-color-16777215">
-                                                </path>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="https://x.com/spotify">
-                                        <span>
-                                            <svg>
-                                                <path
-                                                    d="M9.303 6.928 14.403 1h-1.208L8.766 6.147 5.23 1H1.15L6.5 8.784 1.15 15h1.208l4.676-5.436L10.77 15h4.08zM7.648 8.852l-.542-.775L2.795 1.91H4.65l3.48 4.977.541.775 4.523 6.47H11.34l-3.691-5.28Z">
-                                                </path>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div><a href="https://www.facebook.com/spotify"><span><svg>
-                                                <path
-                                                    d="M16 8a8 8 0 1 0-9.25 7.903v-5.59H4.719V8H6.75V6.237c0-2.005 1.194-3.112 3.022-3.112.875 0 1.79.156 1.79.156V5.25h-1.008c-.994 0-1.304.617-1.304 1.25V8h2.219l-.355 2.313H9.25v5.59A8 8 0 0 0 16 8">
-                                                </path>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="container d-flex justify-content-end"> <!-- copyright -->
-                            <div>
-                                <span>© 2026 Spotify AB</span>
-                            </div>
-
-                        </div>
-                    </nav>
-                </footer>
-            </div>
-            <!----------------------- fine footer  ----------------------->
-
-
-        </main>
+            </main>
 
     </div>
     <!----------------------- fine main  ----------------------->
@@ -438,13 +504,21 @@
     <!----------------------- fine banner  ----------------------->
 
 
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="./index.js"></script>
     <script src="../generic/generic.js"></script>
+
+
+
+
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

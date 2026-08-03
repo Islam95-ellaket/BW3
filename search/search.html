@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./search.css" />
+    <title>Search</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index/index.html">Torna</a>
+            <form id="searchForm" class="d-flex" onsubmit="return false;">
+                <input id="searchInput" class="form-control me-2" type="search" placeholder="Cerca artisti o album" aria-label="Search">
+                <button id="searchBtn" class="btn btn-primary" type="button">Cerca</button>
+            </form>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <h1>Risultati ricerca</h1>
+        <div id="results" class="row g-3 mt-3"></div>
+    </main>
+
+    <script src="./search.js"></script>
+</body>
+</html>

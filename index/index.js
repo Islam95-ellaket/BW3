@@ -144,15 +144,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const searchArtists = () => {
-    // pulisco la ricerca
     const value = searchInput.value.toLowerCase().trim()
-    // filtro l'array
+
+    if (!database || !Array.isArray(database.data) || database.data.length === 0) {
+        return
+    }
+
     const filteredArtists = database.data.filter(item =>
         item.artist.name.toLowerCase().includes(value)
     );
-    // pulisco la row
+
     rowArtist.innerHTML = ''
-    // filtro i nuovi risultati
+
+    if (filteredArtists.length === 0) {
+        rowArtist.innerHTML = 'Nessun Artista'
+        return
+    }
+
     filteredArtists.forEach(({ artist }) => {
         rowArtist.append(createCardArtist(artist))
     })
@@ -164,19 +172,24 @@ const searchAPIArtists = async (query) => {
         const result = await fetch(`${API_URL}${query}`)
         const data = await result.json()
         console.log(data)
-        rowArtist.innerHTML=""
+
+        if (!data || !Array.isArray(data.data) || data.data.length === 0) {
+            rowArtist.innerHTML = 'Nessun Artista'
+            return
+        }
+
+        rowArtist.innerHTML = ''
         rowArtist.append(createCardArtist(data.data[0].artist))
 
     } catch (error) {
         console.log(error)
-        rowArtist.innerHTML=""
-        rowArtist.innerHTML="Nessun Artista"
+        rowArtist.innerHTML = 'Nessun Artista'
     }
 }
 
 
 //ricerca a ogni input
-searchInput.addEventListener('submit', (e)=>{
+searchInput.addEventListener('input', (e)=>{
     e.preventDefault()
     searchArtists()
 }
@@ -191,9 +204,7 @@ searchForm.addEventListener('submit', (e)=>{
     // controllo la ricerca
     if (query === '') {
         //se la query è vuota allora scrivi nessun artista
-         rowArtist.innerHTML=""
-         rowArtist.innerHTML="Nessun Artista"
-         
+         rowArtist.innerHTML = 'Nessun Artista'
     } else {
         //se la query ha valore esegui la ricerca
         searchAPIArtists(query)
@@ -475,3 +486,32 @@ const setupRowSliders = (container) => {
 }
 
 swiperContainers.forEach(container => setupRowSliders(container))
+
+const form = document.getElementById("bottone-input")
+const btncerca = document.getElementById("bottone-cerca")
+const search = document.querySelector('.navigation')
+const sfondo = document.getElementById('sfondo-accesso')
+const menu = document.getElementById('menu')/* bottone */
+const iconamenu = document.getElementById('icona-menu')/* svg del menu */
+const closemenu = document.getElementById('chiusura-menu')/* svg X chiusura */
+let aperto = false
+
+btncerca.addEventListener("click", (event) => {
+  event.preventDefault()
+  form.classList.toggle("apri")
+  search.classList.toggle('chiudi')
+})
+
+menu.addEventListener('click', (event) => {
+  aperto = !aperto
+  sfondo.classList.toggle("apri", aperto)
+
+  if (aperto) {
+    closemenu.style.display = 'block'
+    iconamenu.style.display = 'none'
+  } else {
+    iconamenu.style.display = 'block'
+    closemenu.style.display = 'none'
+  }
+})
+
